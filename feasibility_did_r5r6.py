@@ -193,16 +193,11 @@ CANDIDATE_OUTCOMES = {
     'q10b': 'fear_crime_home',      # "How often feared crime in your home"
     # Fear while walking: q88a same question stem in both (0-3; -1=N/A in R6, strip)
     'q88a': 'fear_unsafe_walking',  # "How often felt unsafe walking in neighborhood"
-    # ── CONFIRMED COMPARABLE: q52a-e democratic accountability perceptions ─────
-    # PDF-verified R5 question wording. Battery is standard longitudinal items
-    # (R2/R5 sources), carried forward across rounds; scale 0-3 both rounds.
-    # "In your opinion, how often, in this country: ..."
-    'q52a': 'media_abuse_freedoms',      # "Does news media abuse its freedoms?" (R5)
-    'q52b': 'party_competition_violent', # "Does party competition lead to violent conflict?" (R2)
-    'q52c': 'pres_ignores_courts',       # "Does President ignore courts/laws?" (R2)
-    'q52d': 'opp_parties_silenced',      # "Are opposition parties silenced by govt?" (R5)
-    'q52e': 'pres_ignores_assembly',     # "Does President ignore national assembly?" (R5)
     # ── EXCLUDED (different questions across rounds): ─────────────────────────
+    # q52a-e: R5 = democratic abuse perceptions ("how often pres ignores courts",
+    #   "how often opposition silenced", etc.; 0=Never, 3=Always)
+    #   R6 = institutional TRUST battery ("trust president/parliament/INEC/tax dept/
+    #   local govt"; 0=Not at all, 3=A lot)  ← OPPOSITE constructs, incomparable
     # q66a-e: R5=local govt perf, R6=national govt perf (different level+domain)
     # q67a-b: R5=service access difficulty, R6=local govt performance
     # q93a-b: R5=radio/TV listening freq, R6=civic engagement item
