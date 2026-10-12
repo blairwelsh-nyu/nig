@@ -17,6 +17,8 @@ os.chdir('/home/user/nig')
 BW_KM = 50; RADIUS_KM = 150; EARTH_R = 6371.0
 KIDNAP_RE = re.compile(r'kidnap|abduct|ransom|hostage|forced disappear', re.I)
 DELTA_STATES = {'Abia','Rivers','Edo','Delta','Bayelsa','Cross River','Akwa Ibom','Imo','Anambra'}
+# Boko Haram heartland: states with overwhelming BH event share in ACLED
+BOKO_STATES  = {'Borno','Yobe','Adamawa'}
 
 # ── Content-matched outcome mapping: (r5_col, r6_col, label, note)
 # R5 q-number often shifts by 2–6 relative to R6 for same question wording.
@@ -94,20 +96,27 @@ state_cents.columns = ['state','lat','lon']
 r5['state'] = assign_state(r5['lat'].values, r5['lon'].values, state_cents)
 r6['state'] = assign_state(r6['lat'].values, r6['lon'].values, state_cents)
 
+BH_MASK = (acled['actor1'].str.contains('Boko Haram', na=False, case=False) |
+           acled['actor2'].str.contains('Boko Haram', na=False, case=False))
+VIOL_TYPES = ['Violence against civilians', 'Battles', 'Explosions/Remote violence']
+
 for df, mid, start in [
     (r5, '2012-11-04', '2011-11-05'),
     (r6, '2015-08-15', '2014-08-15'),
 ]:
     win = acled[(acled['event_date']>=start) & (acled['event_date']<=mid)]
-    knap = win[win['notes'].str.contains(KIDNAP_RE, na=False) |
-               win['sub_event_type'].str.contains('Abduction', na=False)]
-    viol = win[win['event_type'].isin(['Violence against civilians','Battles',
-                                        'Explosions/Remote violence'])]
-    df['knap_exp'] = kernel_exp(df['lat'].values, df['lon'].values,
-                                 knap['latitude'].values, knap['longitude'].values)
-    df['viol_exp'] = kernel_exp(df['lat'].values, df['lon'].values,
-                                 viol['latitude'].values, viol['longitude'].values)
+    knap     = win[win['notes'].str.contains(KIDNAP_RE, na=False) |
+                   win['sub_event_type'].str.contains('Abduction', na=False)]
+    viol     = win[win['event_type'].isin(VIOL_TYPES)]
+    bh_viol  = win[BH_MASK & win['event_type'].isin(VIOL_TYPES)]
+    df['knap_exp']    = kernel_exp(df['lat'].values, df['lon'].values,
+                                    knap['latitude'].values, knap['longitude'].values)
+    df['viol_exp']    = kernel_exp(df['lat'].values, df['lon'].values,
+                                    viol['latitude'].values, viol['longitude'].values)
+    df['bh_viol_exp'] = kernel_exp(df['lat'].values, df['lon'].values,
+                                    bh_viol['latitude'].values, bh_viol['longitude'].values)
     df['delta'] = df['state'].isin(DELTA_STATES).astype(float)
+    df['boko']  = df['state'].isin(BOKO_STATES).astype(float)
 
 # Build R6 frame with content-matched columns renamed to R5 names.
 # Two-step rename via temp names avoids chain conflicts
@@ -136,8 +145,9 @@ r6_renamed = r6_work.rename(columns=final_rename)
 # Pool
 r5['post'] = 0.0; r6_renamed['post'] = 1.0
 pooled = pd.concat([r5, r6_renamed], ignore_index=True, sort=False)
-pooled['log_knap'] = np.log1p(pooled['knap_exp'])
-pooled['log_viol'] = np.log1p(pooled['viol_exp'])
+pooled['log_knap']    = np.log1p(pooled['knap_exp'])
+pooled['log_viol']    = np.log1p(pooled['viol_exp'])
+pooled['log_bh_viol'] = np.log1p(pooled['bh_viol_exp'])
 
 urb_col = next((c for c in pooled.columns if 'urban' in c.lower()), None)
 if urb_col:
@@ -163,9 +173,9 @@ def run_did(pooled, var, treat_var):
     df['t'] = (df[treat_var] - df[treat_var].mean()) / t_std
     ctrl = '+ urb' if 'urb' in df.columns else ''
 
-    # delta is state-level: state FE would absorb all its variation (perfect
-    # collinearity). Use HC3 robust SE without state FE for delta specification.
-    if treat_var == 'delta':
+    # State-level binaries (delta, boko) are collinear with state FE.
+    # Use HC3 robust SE without state FE for those specifications.
+    if treat_var in ('delta', 'boko'):
         formula = f'y ~ t * post + post {ctrl}'
         cov_type = 'HC3'
         cov_kwds = {}
@@ -184,13 +194,16 @@ def run_did(pooled, var, treat_var):
     pval   = m.pvalues.get('t:post', np.nan)
     coef_t = m.params.get('t', np.nan)
     pval_t = m.pvalues.get('t', np.nan)
+    # Discard numerically degenerate results (outcomes normalized 0-1, so |β|>5 is garbage)
+    if np.isnan(coef) or np.isnan(se) or abs(coef) > 5 or se > 5:
+        return None
     return {'var': var, 'treat': treat_var,
             'n': len(df), 'n_r5': (df['post']==0).sum(), 'n_r6': (df['post']==1).sum(),
             'did_coef': coef, 'did_se': se, 'did_pval': pval,
             'main_treat_coef': coef_t, 'main_treat_pval': pval_t}
 
 
-treat_vars = ['log_knap', 'log_viol', 'delta']
+treat_vars = ['log_knap', 'log_bh_viol', 'log_viol', 'delta', 'boko']
 
 results = []
 for r5_col, r6_col, label, note in MATCHED_OUTCOMES:
@@ -218,7 +231,7 @@ def stars(p):
 print("\n" + "="*110)
 print("CONTENT-MATCHED DiD RESULTS (R5→R6 cross-number pairs, verified same wording)")
 print("="*110)
-print("Note: delta treatment uses HC3 robust SE (no state FE; state FE would be collinear)")
+print("Note: delta/boko treatments use HC3 robust SE (state-level binary, collinear with state FE)")
 for tv in treat_vars:
     sub = res_df[res_df['treat'] == tv].sort_values('did_pval')
     print(f"\n--- Treatment: {tv} ---")
