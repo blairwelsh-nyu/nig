@@ -193,15 +193,15 @@ CANDIDATE_OUTCOMES = {
     'q10b': 'fear_crime_home',      # "How often feared crime in your home"
     # Fear while walking: q88a same question stem in both (0-3; -1=N/A in R6, strip)
     'q88a': 'fear_unsafe_walking',  # "How often felt unsafe walking in neighborhood"
-    # ── UNCERTAIN: q52a-e are 0-3 scale in both rounds but q52d uncorrelated ─
-    # with q59h (trust police) in R5 — meaning q52d is NOT trust in police in R5.
-    # Including for reference only; interpretation of significant results requires
-    # PDF-level questionnaire verification of R5 q52 question wording.
-    'q52a': 'q52a_VERIFY',
-    'q52b': 'q52b_VERIFY',
-    'q52c': 'q52c_VERIFY',
-    'q52d': 'q52d_VERIFY',          # corr(q52d_R5, q59h_trust_police_R5) = -0.045
-    'q52e': 'q52e_VERIFY',
+    # ── CONFIRMED COMPARABLE: q52a-e democratic accountability perceptions ─────
+    # PDF-verified R5 question wording. Battery is standard longitudinal items
+    # (R2/R5 sources), carried forward across rounds; scale 0-3 both rounds.
+    # "In your opinion, how often, in this country: ..."
+    'q52a': 'media_abuse_freedoms',      # "Does news media abuse its freedoms?" (R5)
+    'q52b': 'party_competition_violent', # "Does party competition lead to violent conflict?" (R2)
+    'q52c': 'pres_ignores_courts',       # "Does President ignore courts/laws?" (R2)
+    'q52d': 'opp_parties_silenced',      # "Are opposition parties silenced by govt?" (R5)
+    'q52e': 'pres_ignores_assembly',     # "Does President ignore national assembly?" (R5)
     # ── EXCLUDED (different questions across rounds): ─────────────────────────
     # q66a-e: R5=local govt perf, R6=national govt perf (different level+domain)
     # q67a-b: R5=service access difficulty, R6=local govt performance
@@ -213,7 +213,6 @@ CANDIDATE_OUTCOMES = {
     # q59a-b: R5=trust in president/parliament, R6=MP/councilor listening frequency
     # q69a-c: R5=clinic access problems, R6=deprivation frequency items
     # q89a: R5=crime victim binary (0/1), R6=police response scale (1-5) INCOMPARABLE
-    # q52a-e trust battery: R5 equivalent is q59a-j; q52 in R5 is unverified
 }
 
 
