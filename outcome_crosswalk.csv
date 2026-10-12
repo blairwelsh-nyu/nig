@@ -1,0 +1,39 @@
+round,variable,wording,scale,domain,n_approx,evidence
+R2,q11a,Fear of crime in own home,"0=Never, 1=Once/twice, 2=Several, 3=Many times, 4=Always, 9=DK",Fear/safety,2418,confirmed_pdf
+R2,q11b,Had something stolen from house,same 0-4 scale,Victimization,2418,confirmed_pdf
+R2,q11c,Been physically attacked,same 0-4 scale,Victimization,2418,confirmed_pdf
+R2,q43(police),Trust in police,"0=Not at all, 1=Just little, 2=Somewhat, 3=A lot, 9=DK",Trust in police,~2400,confirmed_pdf
+R2,q43(army),Trust in army,0-3 scale,Trust in army,~2400,confirmed_pdf
+R2,q43(courts),Trust in courts of law,0-3 scale,Trust in courts,~2400,confirmed_pdf
+R2,q9c,Gone without medicine/medical treatment,"0=Never, 4=Always",Healthcare deprivation,2428,confirmed_pdf
+R3,q11/q12,Fear of crime (exact wording unconfirmed),0-4 likely,Fear/safety,2363,inferred
+R3,q43(police),Trust in police,0-3 scale,Trust in police,~2360,inferred
+R3,q8c,Gone without medicine/medical treatment,0-4,Healthcare deprivation,2363,confirmed_values
+R3,q96b,Worried/anxious that you felt tired,0-3 scale,Mental health,~2360,confirmed_pdf
+R4,q11,How do you rate security in your community,1-5 scale likely,Fear/safety,2324,inferred_values
+R4,q12a,Fear of crime / victimization A,0-4,Victimization/safety,2324,inferred_values
+R4,q12b,Victimization B,0-4,Victimization,2324,inferred_values
+R4,q43,Trust in government (president),0-4,Trust in government,2324,inferred_values
+R4,q44a-c,Institutional legitimacy (courts/police right),"1-5 Likert, DIFFERENT from trust",Institutional legitimacy,2324,confirmed_pdf
+R4,q8c,Gone without medicine/medical treatment,0-4,Healthcare deprivation,2324,confirmed_values
+R5,q11,Why crimes not reported to police (categorical),0-8 options,Policing/trust proxy,2400,confirmed_pdf
+R5,q59h,Trust in police,"0=Not at all, 1=Just little, 2=Somewhat, 3=A lot, 9=DK",Trust in police,2400,confirmed_pdf
+R5,q59i,Trust in army,0-3 scale,Trust in army,2400,confirmed_pdf
+R5,q59j,Trust in courts of law,0-3 scale,Trust in courts,2400,confirmed_pdf
+R5,q59a,Trust in president,0-3 scale,Trust in president,2400,confirmed_pdf
+R5,q59e,Trust in local government council,0-3 scale,Trust in LG,2400,confirmed_pdf
+R5,q65f,Govt performance: Reducing crime,"1=Very Badly, 2=Fairly Badly, 3=Fairly Well, 4=Very Well, 9=DK",Govt crime performance,2400,confirmed_pdf
+R5,q65a,Govt performance: Managing economy,1-4 scale,Govt performance,2400,confirmed_pdf
+R5,q88a,Trust in relatives (interpersonal),0-3 scale,Social trust,2400,confirmed_pdf
+R5,q88b,Trust in neighbours,0-3 scale,Social trust,2400,confirmed_pdf
+R5,q8c,Gone without medicine/medical treatment,0-4,Healthcare deprivation,2400,confirmed_values
+R6,q11a,Fear of crime,0-3 scale,Fear/safety,2400,confirmed_values
+R6,q52h,Trust in police,"0=Not at all, 1=Just little, 2=Somewhat, 3=A lot, 9=DK",Trust in police,2400,confirmed_pdf
+R6,q52i,Trust in army,0-3 scale,Trust in army,2400,confirmed_pdf
+R6,q52j,Trust in courts,0-3 scale,Trust in courts,2400,confirmed_pdf
+R6,q52a,Trust in president,0-3 scale,Trust in president,2400,confirmed_pdf
+R6,q66f,Govt performance: Reducing crime,"1=Very Badly to 4=Very Well, 9=DK",Govt crime performance,2400,confirmed_pdf
+R6,q8c,Gone without medicine/medical treatment,0-4,Healthcare deprivation,2400,confirmed_values
+R6,q66a,Govt performance: Managing economy,1-4 scale,Govt performance,2400,confirmed_pdf
+R1,q88,Crime victimization (confirmed exists from Q88 reference),scale TBD,Victimization,3603,inferred_from_codebook_ref
+R1,povhth,Gone without medicine/medical treatment,0-3 scale,Healthcare deprivation,3603,confirmed_values
