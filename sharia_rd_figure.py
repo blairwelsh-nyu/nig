@@ -155,22 +155,25 @@ by = [c[1] for c in SHARIA_BOUNDARY_COORDS]
 ax.plot(bx, by, color=C_LINE, linewidth=2.2, zorder=5, solid_capstyle='round',
         label='Sharia boundary (approx.)')
 
-# State centroid labels (selected key states)
-LABEL_STATES = {
-    'Sokoto':   (0.0, 0.15), 'Kebbi':   (0.0, 0.0),  'Zamfara':  (0.0, 0.0),
-    'Katsina':  (0.0, 0.0),  'Kano':    (0.0, 0.15), 'Jigawa':   (0.0, 0.0),
-    'Kaduna':   (0.0, -0.2), 'Niger':   (0.0, 0.0),  'Bauchi':   (0.0, 0.0),
-    'Gombe':    (0.0, 0.0),  'Yobe':    (0.0, 0.0),  'Borno':    (0.0, 0.15),
-    'Kwara':    (0.0, 0.0),  'Nassarawa':(0.0,0.0),  'Plateau':  (0.0, 0.0),
-    'Taraba':   (0.0, 0.0),  'Adamawa': (0.0, 0.0),
+# State labels: border states only (states that share the Sharia/non-Sharia border)
+# Small manual offsets (dlon, dlat) to prevent overlap with respondent dots
+BORDER_LABEL_STATES = {
+    # Sharia side of border
+    'Kebbi':    ( 0.0,  0.35), 'Niger':    ( 0.0,  0.35),
+    'Kaduna':   ( 0.0,  0.35), 'Bauchi':   ( 0.0,  0.35),
+    'Gombe':    ( 0.0,  0.35), 'Borno':    ( 0.0,  0.35),
+    # Non-Sharia side of border
+    'Kwara':    ( 0.0, -0.35), 'Nassarawa':( 0.5, -0.35),
+    'Plateau':  ( 0.0, -0.35), 'Taraba':   ( 0.0, -0.35),
+    'Adamawa':  ( 0.0, -0.35),
 }
 for _, row in state_cents.iterrows():
-    if row['state'] in LABEL_STATES:
-        off = LABEL_STATES[row['state']]
+    if row['state'] in BORDER_LABEL_STATES:
+        dlon, dlat = BORDER_LABEL_STATES[row['state']]
         color = C_SHARIA if row['state'] in SHARIA_STATES else '#5a6e7f'
-        ax.text(row['lon'] + off[0], row['lat'] + off[1], row['state'],
-                fontsize=6.0, ha='center', va='center', color=color,
-                alpha=0.85, fontweight='semibold')
+        ax.text(row['lon'] + dlon, row['lat'] + dlat, row['state'],
+                fontsize=6.5, ha='center', va='center', color=color,
+                alpha=0.90, fontweight='bold')
 
 # Respondent scatter (only within 200 km for clarity)
 near = r2[r2['dist_km'].abs() <= 200].copy()
@@ -283,20 +286,24 @@ for _, row in results_df.iterrows():
                       linewidth=0.8),
             zorder=5)
 
-# Outcome group labels (bold, boxed, left side)
-# Determine x position for labels (left of plot area)
-x_label = -0.90
+# Outcome group labels — placed just left of the axes using axes-fraction x so
+# they are never clipped regardless of the data xlim.
+from matplotlib.transforms import blended_transform_factory
+label_tf = blended_transform_factory(ax.transAxes, ax.transData)
+
 for g, (label, col) in enumerate(OUTCOMES):
     y_center = (y_positions[(label, 0)] + y_positions[(label, 1)]) / 2
-    # Bold box if both specs are significant at p<0.05
-    sub = results_df[results_df['label'] == label]
-    significant = (sub['pval'] < 0.05).all()
+    # Bold = primary spec (BW 150 km) is significant at p < 0.05
+    primary = results_df[(results_df['label'] == label) & (results_df['bw'] == 150)]
+    significant = len(primary) > 0 and primary.iloc[0]['pval'] < 0.05
     edge_color = C_SHARIA if significant else '#888888'
-    lw         = 1.5 if significant else 0.8
+    lw         = 1.5    if significant else 0.8
     fw         = 'bold' if significant else 'normal'
-    ax.text(x_label, y_center, label,
-            ha='left', va='center', fontsize=10,
-            fontweight=fw, color=CI_COLOR_INNER if significant else '#555555',
+    fc         = CI_COLOR_INNER if significant else '#555555'
+    ax.text(-0.03, y_center, label,
+            transform=label_tf,
+            ha='right', va='center', fontsize=10,
+            fontweight=fw, color=fc, clip_on=False,
             bbox=dict(boxstyle='square,pad=0.3', facecolor='white',
                       edgecolor=edge_color, linewidth=lw),
             zorder=5)
@@ -316,11 +323,12 @@ ax.legend(handles=bw_legend, fontsize=8.5, loc='upper right',
 # Zero line
 ax.axvline(0, color='#333333', linewidth=0.9, linestyle='--', alpha=0.7, zorder=1)
 
-# Axis limits and labels
+# Axis limits: left driven by widest 95% CI, right padded so zero isn't at edge
 all_lo = results_df.apply(lambda r: r['coef'] - 1.96*r['se'], axis=1).min()
 all_hi = results_df.apply(lambda r: r['coef'] + 1.96*r['se'], axis=1).max()
-pad    = 0.12
-ax.set_xlim(all_lo - pad, all_hi + pad)
+x_left  = all_lo - 0.12
+x_right = max(all_hi + 0.12, 0.20)   # always show at least 0.2 to right of zero
+ax.set_xlim(x_left, x_right)
 y_all = list(y_positions.values())
 ax.set_ylim(min(y_all) - 0.55, max(y_all) + 0.45)
 ax.set_yticks([])
