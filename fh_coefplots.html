@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conflict Health Nigeria</title>
+<style>
+:root {
+  --bg:       #fafaf8;
+  --surface:  #ffffff;
+  --border:   #ddd;
+  --t1:       #1a1a1a;
+  --t2:       #555555;
+  --t3:       #999999;
+  --ch:       #1b6bb5;   /* health series */
+  --ce:       #b86e18;   /* education series */
+  --czero:    #aaaaaa;
+  --serif:    Georgia, 'Times New Roman', serif;
+  --sans:     system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111318; --surface: #1a1d26; --border: #2a2e3a;
+    --t1: #e8e8e0; --t2: #9090a8; --t3: #5a5a78;
+    --ch: #5ba4e8; --ce: #e0a04c; --czero: #5a5a78;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111318; --surface: #1a1d26; --border: #2a2e3a;
+  --t1: #e8e8e0; --t2: #9090a8; --t3: #5a5a78;
+  --ch: #5ba4e8; --ce: #e0a04c; --czero: #5a5a78;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t1);font-family:var(--serif);font-size:15px;
+     line-height:1.65;padding:32px 16px 56px}
+.page{max-width:820px;margin:0 auto}
+
+/* Header */
+.ptitle{font-size:21px;font-weight:700;line-height:1.3;text-align:center;margin-bottom:6px}
+.pmeta{text-align:center;color:var(--t2);font-size:12.5px;font-family:var(--sans);
+       margin-bottom:28px;letter-spacing:.01em}
+
+/* Abstract */
+.abs{background:var(--surface);border:1px solid var(--border);border-radius:5px;
+     padding:20px 24px;margin-bottom:36px}
+.abs-head{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;
+          color:var(--t2);font-family:var(--sans);margin-bottom:10px}
+.abs p{font-size:14px;line-height:1.72;color:var(--t1)}
+
+/* Figures */
+.fig{margin-bottom:48px}
+.figcap{font-family:var(--sans);font-size:13px;margin-bottom:14px;line-height:1.45}
+.figcap strong{font-size:13px}
+.fignote{font-family:var(--sans);font-size:11.5px;color:var(--t2);line-height:1.55;margin-top:14px}
+
+/* Panel rows */
+.pr{display:flex;gap:0;align-items:flex-start}
+.pa{flex:3;min-width:0}
+.pb{flex:1.1;border-left:1px solid var(--border);padding-left:18px;min-width:0}
+.plabel{font-family:var(--sans);font-size:10.5px;font-weight:700;text-transform:uppercase;
+        letter-spacing:.07em;color:var(--t2);margin-bottom:8px}
+.esgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:600px){
+  .pr{flex-direction:column}
+  .pb{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:14px;margin-top:14px}
+  .esgrid{grid-template-columns:1fr}
+}
+svg{display:block;width:100%}
+
+/* Tooltip */
+.tt{position:fixed;background:var(--surface);border:1px solid var(--border);border-radius:5px;
+    padding:8px 12px;font-family:var(--sans);font-size:12px;line-height:1.55;pointer-events:none;
+    opacity:0;transition:opacity .08s;z-index:1000;max-width:210px;box-shadow:0 2px 10px rgba(0,0,0,.13)}
+.tt.on{opacity:1}
+.tt strong{color:var(--t1)}
+.tt span{color:var(--t2)}
+</style>
+</head>
+<body>
+<div class="page">
+
+<p class="ptitle">Farmer–Herder Conflict and Women's Access to Health Services:<br>Evidence from Nigeria's Middle Belt</p>
+<p class="pmeta">Working Paper &ensp;·&ensp; Nigeria DHS 2003–2018 &ensp;·&ensp; October 2026</p>
+
+<div class="abs">
+  <p class="abs-head">Abstract</p>
+  <p>We estimate the effect of farmer–herder conflict on women's healthcare utilization and educational attainment in Nigeria's Middle Belt. Using a difference-in-differences design that exploits variation in post-2009 Armed Conflict Location and Event Data (ACLED) conflict intensity across Local Government Areas, we compare outcomes in high-conflict (top-tercile) and low-conflict LGAs before (2003, 2008) and after (2013, 2018) the escalation of interethnic violence. Women in high-conflict LGAs experienced significant declines in skilled birth attendance (&minus;6.9 percentage points), any prenatal care visits (&minus;5.3&thinsp;pp), and modern contraceptive use (&minus;5.4&thinsp;pp), alongside a 2.0-year reduction in completed schooling. A four-wave event study—exploiting the 2003 DHS as a genuine pre-treatment wave—confirms parallel trends for all primary outcomes and documents effects escalating after 2013. A placebo test using pre-2009 conflict intensity yields uniformly null results, ruling out selection on pre-existing differences. Together, the findings suggest that interethnic conflict disrupts access to formal health and education services beyond the direct costs of violence, with implications for public health delivery in conflict-affected regions.</p>
+</div>
+
+<!-- Figure 1 -->
+<div class="fig">
+  <p class="figcap"><strong>Figure 1.</strong> Effect of Farmer–Herder Conflict on Healthcare Utilization and Educational Attainment</p>
+  <div class="pr">
+    <div class="pa">
+      <p class="plabel">A &nbsp;·&nbsp; Healthcare (percentage points)</p>
+      <svg id="cv-h" viewBox="0 0 460 178"></svg>
+    </div>
+    <div class="pb">
+      <p class="plabel">B &nbsp;·&nbsp; Education (years)</p>
+      <svg id="cv-e" viewBox="0 0 190 95"></svg>
+    </div>
+  </div>
+  <p class="fignote"><em>Notes:</em> Difference-in-differences estimates. Treatment = LGA in top tercile of farmer–herder ACLED events, 2009–2018. All specifications include LGA fixed effects, survey-year fixed effects, and LGA-clustered standard errors. Sample: N&thinsp;≈&thinsp;39,000 women from Nigeria DHS 2008–2018, 12 Middle Belt states. Horizontal bars = 95% confidence intervals. *** p&lt;0.001, ** p&lt;0.01, * p&lt;0.05, † p&lt;0.10.</p>
+</div>
+
+<!-- Figure 2 -->
+<div class="fig">
+  <p class="figcap"><strong>Figure 2.</strong> Event Study: Pre-trends and Dynamic Treatment Effects</p>
+  <div class="esgrid">
+    <div>
+      <p class="plabel">Skilled delivery</p>
+      <svg id="es-sd" viewBox="0 0 220 200"></svg>
+    </div>
+    <div>
+      <p class="plabel">Modern contraception</p>
+      <svg id="es-mc" viewBox="0 0 220 200"></svg>
+    </div>
+    <div>
+      <p class="plabel">Years of education</p>
+      <svg id="es-ed" viewBox="0 0 220 200"></svg>
+    </div>
+  </div>
+  <p class="fignote"><em>Notes:</em> Survey-year × treatment interaction coefficients from 4-wave DiD (2003, 2008, 2013, 2018). Base year 2008 = 0 by construction (diamond). Points = β̂; whiskers = 95% CIs. Dashed vertical line marks conflict onset (post-2009). Shaded region = post-treatment period. G&thinsp;=&thinsp;203 LGAs in Middle Belt. ANC event study not shown; coefficients follow the pattern of skilled delivery. Pre-trend p-values (2003&thinsp;×&thinsp;treated): skilled delivery p&thinsp;=&thinsp;0.40, modern contraception p&thinsp;=&thinsp;0.77.</p>
+</div>
+
+</div>
+<div class="tt" id="tt"></div>
+
+<script>
+/* ── tooltip ─────────────────────────────────────────────────────────────── */
+const tt = document.getElementById('tt');
+function showTip(e, html){ tt.innerHTML=html; tt.classList.add('on'); moveTip(e); }
+function moveTip(e){
+  const x=e.clientX+16, y=e.clientY-44;
+  tt.style.left=Math.min(x,window.innerWidth-220)+'px';
+  tt.style.top=Math.max(y,6)+'px';
+}
+function hideTip(){ tt.classList.remove('on'); }
+
+function sig(p){ return p<.001?'***': p<.01?'**': p<.05?'*': p<.1?'†': ''; }
+
+/* ── data ────────────────────────────────────────────────────────────────── */
+const DID_H = [
+  { label:'Modern contraception', b:-.05374, se:.01275, p:.0000 },
+  { label:'Any ANC visit',        b:-.05340, se:.02543, p:.0369 },
+  { label:'Skilled delivery',     b:-.06894, se:.02516, p:.0067 },
+];
+const DID_E = [
+  { label:'Years of education', b:-1.97269, se:.74038, p:.0083 },
+];
+
+const ES = {
+  sd: [
+    { yr:2003, b:-.02842, se:.03334 },
+    { yr:2008, b:0,       se:0,      base:true },
+    { yr:2013, b:-.06542, se:.02593 },
+    { yr:2018, b:-.08398, se:.03065 },
+  ],
+  mc: [
+    { yr:2003, b: .00475, se:.01600 },
+    { yr:2008, b:0,       se:0,      base:true },
+    { yr:2013, b:-.05018, se:.01297 },
+    { yr:2018, b:-.05734, se:.01461 },
+  ],
+  ed: [
+    { yr:2003, b:-.62986, se:.58707 },
+    { yr:2008, b:0,       se:0,      base:true },
+    { yr:2013, b:-2.17938, se:.72715 },
+    { yr:2018, b:-1.88675, se:.87688 },
+  ],
+};
+
+/* ── helpers ─────────────────────────────────────────────────────────────── */
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+function addHover(el, rects) {
+  rects.forEach(r => {
+    r.addEventListener('mouseenter', e => showTip(e, r.dataset.tip));
+    r.addEventListener('mousemove', moveTip);
+    r.addEventListener('mouseleave', hideTip);
+  });
+}
+
+/* ── coefplot ────────────────────────────────────────────────────────────── */
+function coef(id, data, xlo, xhi, color, isPct, VW, VH) {
+  const el = document.getElementById(id);
+  const ML=165, MR=28, MT=18, MB=36;
+  const PW=VW-ML-MR, PH=VH-MT-MB;
+  const n=data.length, rowH=PH/n;
+  const xs=v=>ML+(v-xlo)/(xhi-xlo)*PW;
+  const ym=i=>MT+(i+.5)*rowH;
+
+  const T1=css('--t1'), T2=css('--t2'), T3=css('--t3'), Z=css('--czero'), BG=css('--bg');
+  let s='';
+
+  // grid
+  const step = isPct ? .05 : 1;
+  for(let v=Math.ceil(xlo/step)*step; v<=xhi+1e-9; v=+(v+step).toFixed(6)){
+    const x=xs(v);
+    s+=`<line x1="${x}" y1="${MT}" x2="${x}" y2="${MT+PH}" stroke="${Z}" stroke-width=".4" opacity=".45"/>`;
+    const lbl = isPct ? (v*100).toFixed(0)+'%' : v.toFixed(0);
+    s+=`<text x="${x}" y="${MT+PH+15}" text-anchor="middle" font-size="10" fill="${T3}" font-family="system-ui">${lbl}</text>`;
+  }
+  // axis label
+  const axLabel = isPct ? 'Percentage-point change' : 'Change in years';
+  s+=`<text x="${ML+PW/2}" y="${VH-3}" text-anchor="middle" font-size="10" fill="${T2}" font-family="system-ui">${axLabel}</text>`;
+
+  // zero line
+  const x0=xs(0);
+  s+=`<line x1="${x0}" y1="${MT-5}" x2="${x0}" y2="${MT+PH+5}" stroke="${Z}" stroke-width="1.2" stroke-dasharray="4,3"/>`;
+
+  const rects=[];
+  data.forEach((d,i)=>{
+    const ci=1.96*d.se;
+    const xb=xs(d.b), xL=xs(Math.max(d.b-ci,xlo-.01)), xR=xs(Math.min(d.b+ci,xhi+.01));
+    const y=ym(i), st=sig(d.p);
+    const cap = isPct ? (d.b*100).toFixed(1)+'pp' : d.b.toFixed(2)+' yrs';
+
+    s+=`<line x1="${xL}" y1="${y}" x2="${xR}" y2="${y}" stroke="${color}" stroke-width="2.2" stroke-linecap="round"/>`;
+    s+=`<line x1="${xL}" y1="${y-4.5}" x2="${xL}" y2="${y+4.5}" stroke="${color}" stroke-width="1.5"/>`;
+    s+=`<line x1="${xR}" y1="${y-4.5}" x2="${xR}" y2="${y+4.5}" stroke="${color}" stroke-width="1.5"/>`;
+    s+=`<circle cx="${xb}" cy="${y}" r="5.5" fill="${color}" stroke="${BG}" stroke-width="2"/>`;
+    s+=`<text x="${ML-10}" y="${y+4}" text-anchor="end" font-size="12" fill="${T1}" font-family="system-ui">${d.label}</text>`;
+    if(st) s+=`<text x="${xR+5}" y="${y+4.5}" font-size="11" fill="${color}" font-family="system-ui">${st}</text>`;
+    s+=`<text x="${xb}" y="${y-10}" text-anchor="middle" font-size="9.5" fill="${color}" font-weight="600" font-family="system-ui">${cap}</text>`;
+
+    const ttB = isPct?(d.b*100).toFixed(2)+'pp':d.b.toFixed(3)+' yrs';
+    const ttC = isPct?`[${((d.b-ci)*100).toFixed(1)}, ${((d.b+ci)*100).toFixed(1)}] pp`
+                     :`[${(d.b-ci).toFixed(2)}, ${(d.b+ci).toFixed(2)}] yrs`;
+    const rect=document.createElementNS('http://www.w3.org/2000/svg','rect');
+    rect.setAttribute('x','0'); rect.setAttribute('y',y-rowH/2);
+    rect.setAttribute('width',VW); rect.setAttribute('height',rowH);
+    rect.setAttribute('fill','transparent');
+    rect.dataset.tip=`<strong>${d.label}</strong><br><span>β =</span> ${ttB}<br><span>95% CI:</span> ${ttC}<br><span>p =</span> ${d.p.toFixed(4)}`;
+    rects.push(rect);
+  });
+
+  el.innerHTML=s;
+  rects.forEach(r=>el.appendChild(r));
+  addHover(el, rects);
+}
+
+/* ── event study ──────────────────────────────────────────────────────────── */
+function esPlot(id, data, ylo, yhi, color, isPct, VW, VH) {
+  const el = document.getElementById(id);
+  const ML=38, MR=12, MT=22, MB=40;
+  const PW=VW-ML-MR, PH=VH-MT-MB;
+  const YEARS=[2003,2008,2013,2018];
+  const xs=yr=>ML+(YEARS.indexOf(yr)/(YEARS.length-1))*PW;
+  const ys=v=>MT+(yhi-v)/(yhi-ylo)*PH;
+
+  const T2=css('--t2'), T3=css('--t3'), Z=css('--czero'), BG=css('--bg');
+  let s='';
+
+  // post-treatment shade (2009–2018)
+  const x08=xs(2008), x13=xs(2013), x18=xs(2018);
+  const onsetX=x08+(x13-x08)/2;
+  s+=`<rect x="${onsetX}" y="${MT}" width="${x18-onsetX}" height="${PH}" fill="${color}" opacity=".05"/>`;
+
+  // onset line
+  s+=`<line x1="${onsetX}" y1="${MT}" x2="${onsetX}" y2="${MT+PH}" stroke="${Z}" stroke-width="1" stroke-dasharray="5,3" opacity=".75"/>`;
+
+  // "Pre" / "Post" labels
+  s+=`<text x="${(ML+onsetX)/2}" y="${MT+12}" text-anchor="middle" font-size="9" fill="${T3}" font-family="system-ui" opacity=".85">Pre</text>`;
+  s+=`<text x="${(onsetX+ML+PW)/2}" y="${MT+12}" text-anchor="middle" font-size="9" fill="${color}" font-family="system-ui" opacity=".85">Post</text>`;
+
+  // zero line
+  const y0=ys(0);
+  s+=`<line x1="${ML}" y1="${y0}" x2="${ML+PW}" y2="${y0}" stroke="${Z}" stroke-width=".8" stroke-dasharray="4,2"/>`;
+
+  // y ticks
+  const step = isPct ? .05 : 1;
+  for(let v=Math.ceil(ylo/step)*step; v<=yhi+1e-9; v=+(v+step).toFixed(6)){
+    const yy=ys(v);
+    if(yy<MT-2||yy>MT+PH+2) continue;
+    s+=`<line x1="${ML}" y1="${yy}" x2="${ML+PW}" y2="${yy}" stroke="${Z}" stroke-width=".3" opacity=".45"/>`;
+    const lbl = isPct ? (v*100).toFixed(0)+'%' : v.toFixed(0);
+    s+=`<text x="${ML-4}" y="${yy+3.5}" text-anchor="end" font-size="9" fill="${T3}" font-family="system-ui">${lbl}</text>`;
+  }
+
+  // x labels
+  YEARS.forEach(yr=>{
+    s+=`<text x="${xs(yr)}" y="${MT+PH+16}" text-anchor="middle" font-size="9.5" fill="${T2}" font-family="system-ui">${yr}</text>`;
+  });
+  s+=`<text x="${ML+PW/2}" y="${VH-4}" text-anchor="middle" font-size="9" fill="${T3}" font-family="system-ui">Survey year</text>`;
+
+  // connecting line
+  const pts=data.map(d=>`${xs(d.yr)},${ys(d.b)}`).join(' ');
+  s+=`<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.8" stroke-linejoin="round" opacity=".6"/>`;
+
+  // marks
+  data.forEach(d=>{
+    const x=xs(d.yr), y=ys(d.b);
+    if(d.base){
+      s+=`<rect x="${x-5.5}" y="${y-5.5}" width="11" height="11" fill="${BG}" stroke="${color}" stroke-width="2" transform="rotate(45,${x},${y})"/>`;
+    } else {
+      const ci=1.96*d.se;
+      const yL=ys(d.b-ci), yR=ys(d.b+ci);
+      s+=`<line x1="${x}" y1="${Math.min(yL,yR)}" x2="${x}" y2="${Math.max(yL,yR)}" stroke="${color}" stroke-width="1.8"/>`;
+      s+=`<line x1="${x-3.5}" y1="${yL}" x2="${x+3.5}" y2="${yL}" stroke="${color}" stroke-width="1.4"/>`;
+      s+=`<line x1="${x-3.5}" y1="${yR}" x2="${x+3.5}" y2="${yR}" stroke="${color}" stroke-width="1.4"/>`;
+      s+=`<circle cx="${x}" cy="${y}" r="4.5" fill="${color}" stroke="${BG}" stroke-width="2"/>`;
+    }
+  });
+
+  el.innerHTML=s;
+
+  // hover rects added as DOM elements
+  const rects=[];
+  data.forEach(d=>{
+    const x=xs(d.yr), ci=d.base?0:1.96*d.se;
+    const ttB=d.base?'0 (base year)':(isPct?(d.b*100).toFixed(2)+'pp':d.b.toFixed(3)+' yrs');
+    const ttC=d.base?'n/a':(isPct?`[${((d.b-ci)*100).toFixed(1)}, ${((d.b+ci)*100).toFixed(1)}] pp`
+                                  :`[${(d.b-ci).toFixed(2)}, ${(d.b+ci).toFixed(2)}] yrs`);
+    const r=document.createElementNS('http://www.w3.org/2000/svg','rect');
+    r.setAttribute('x', x-18); r.setAttribute('y', MT);
+    r.setAttribute('width','36'); r.setAttribute('height', PH);
+    r.setAttribute('fill','transparent');
+    r.dataset.tip=`<strong>${d.yr}</strong><br><span>β =</span> ${ttB}<br><span>95% CI:</span> ${ttC}`;
+    rects.push(r);
+  });
+  rects.forEach(r=>el.appendChild(r));
+  addHover(el, rects);
+}
+
+/* ── render ──────────────────────────────────────────────────────────────── */
+const CH=css('--ch'), CE=css('--ce');
+coef('cv-h', DID_H, -.155, .075, CH, true,  460, 178);
+coef('cv-e', DID_E, -3.6,  0.6,  CE, false, 190,  95);
+esPlot('es-sd', ES.sd, -.22, .14, CH, true,  220, 200);
+esPlot('es-mc', ES.mc, -.13, .09, CH, true,  220, 200);
+esPlot('es-ed', ES.ed, -4.5, 2.0, CE, false, 220, 200);
+</script>
+</body>
+</html>
