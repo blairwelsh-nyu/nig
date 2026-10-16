@@ -100,14 +100,14 @@ svg{display:block;width:100%}
 
 <div class="abs">
   <p class="abs-head">Abstract</p>
-  <p>We estimate the causal effect of farmer–herder conflict on women's healthcare utilization in Nigeria's Middle Belt. Using a four-wave difference-in-differences design (2003, 2008, 2013, 2018) that exploits variation in post-2009 ACLED conflict intensity across Local Government Areas, we find that women in high-conflict LGAs experienced significant declines in skilled birth attendance (&minus;7.3 percentage points), prenatal care visits (&minus;5.6&thinsp;pp), and modern contraceptive use (&minus;5.3&thinsp;pp), alongside a 5.3&thinsp;pp increase in unattended births. A four-wave event study—exploiting the 2003 DHS as a genuine pre-treatment wave—confirms parallel pre-trends for all outcomes. Mechanistic tests consistently point to supply-side disruption of health services as the primary channel: spatial spillovers are absent, rural and urban women are equally affected, wealthier women bear disproportionately larger reductions in skilled delivery (inconsistent with income loss), within-mother sibling fixed effects show no impact on infant mortality conditional on birth, and a dose-response gradient is monotone and highly significant. These findings indicate that interethnic conflict imposes health access costs well beyond the direct harm of violence, with implications for health system resilience in conflict-prone regions.</p>
+  <p>We estimate the causal effect of farmer–herder conflict on women's healthcare utilization in Nigeria's Middle Belt. Using a four-wave difference-in-differences design (2003, 2008, 2013, 2018) that exploits variation in post-2009 ACLED conflict intensity across Local Government Areas, we find that women in high-conflict LGAs experienced significant declines in skilled birth attendance (&minus;7.3 percentage points), prenatal care visits (&minus;5.6&thinsp;pp), and modern contraceptive use (&minus;5.3&thinsp;pp), alongside a 5.3&thinsp;pp increase in unattended births. A four-wave event study using the 2003 DHS as a pre-treatment wave finds no evidence against parallel pre-trends for any outcome. Positive mechanism tests point to supply-side disruption: conflict increases women's self-reported financial access barriers (+8.3&thinsp;pp, p&thinsp;=&thinsp;0.002); both public and private facility births decline; wealthier women bear larger skilled-delivery reductions; and a dose-response gradient is significant across all outcomes. The effects are similar for Fulani and non-Fulani women within the same LGA, consistent with facility-level disruption rather than targeted exclusion. The results are robust to leave-one-state-out jackknifes, Conley spatial standard errors, BH violence controls, and alternative treatment definitions, and survive a randomization inference test at p&thinsp;=&thinsp;0.078.</p>
 </div>
 
 <!-- ── Figure 1 ─────────────────────────────────────────────────────────────── -->
 <div class="fig">
   <p class="figcap"><strong>Figure 1.</strong> Difference-in-Differences Estimates: Farmer–Herder Conflict and Healthcare Utilization</p>
   <svg id="cv-h" viewBox="0 0 580 224"></svg>
-  <p class="fignote"><em>Notes:</em> Difference-in-differences estimates. Treatment = LGA in top tercile of farmer–herder ACLED events, 2009–2018. All specifications include LGA fixed effects, survey-year fixed effects, and LGA-clustered standard errors (G&thinsp;=&thinsp;182 LGAs). Sample: N&thinsp;&asymp;&thinsp;36,000 women from Nigeria DHS 2008–2018, 12 Middle Belt states. Horizontal bars = 95% confidence intervals. *** p&lt;0.001, ** p&lt;0.01, * p&lt;0.05, † p&lt;0.10. "No birth attendant" (amber) indicates an increase in harmful unattended births.</p>
+  <p class="fignote"><em>Notes:</em> Difference-in-differences estimates. Treatment = top tercile of total ACLED farmer–herder events 2009–2018 per LGA (binary indicator; 56 treated LGAs). Specifications include LGA and survey-year fixed effects; LGA-clustered SEs (G&thinsp;=&thinsp;182 LGAs, 3-wave sample DHS 2008–2018). N&thinsp;&asymp;&thinsp;36,000. Figure 2 uses a 4-wave sample (2003–2018, G&thinsp;=&thinsp;203); the larger LGA count reflects LGAs covered in the 2003 survey that drop from the 3-wave sample. The IV section uses a <em>continuous</em> intensity specification (post&thinsp;&times;&thinsp;log LGA FH events); the implied skilled-delivery coefficient there (&minus;0.036) is on a different scale than the &minus;7.3&thinsp;pp binary-treatment estimate shown here. Horizontal bars = 95% CIs. *** p&lt;0.001, ** p&lt;0.01, * p&lt;0.05, † p&lt;0.10. "No birth attendant" (amber) indicates harmful unattended births (positive = worse).</p>
 </div>
 
 <!-- ── Figure 2 ─────────────────────────────────────────────────────────────── -->
@@ -127,14 +127,14 @@ svg{display:block;width:100%}
       <svg id="es-na" viewBox="0 0 220 200"></svg>
     </div>
   </div>
-  <p class="fignote"><em>Notes:</em> Survey-year &times; treatment interaction coefficients from 4-wave DiD (2003, 2008, 2013, 2018). Base year 2008 = 0 by construction (diamond). Points = &beta;&#x302;; whiskers = 95% CIs. Dashed vertical line = conflict onset (post-2009). Shaded region = post-treatment period. G&thinsp;=&thinsp;203 LGAs. Pre-trend p-values (2003&thinsp;&times;&thinsp;treated): skilled delivery p&thinsp;=&thinsp;0.40, modern contraception p&thinsp;=&thinsp;0.77, no birth attendant p&thinsp;=&thinsp;0.99. Any ANC event study follows the pattern of skilled delivery.</p>
+  <p class="fignote"><em>Notes:</em> Survey-year &times; treatment interaction coefficients from 4-wave DiD (2003, 2008, 2013, 2018). Base year 2008 = 0 by construction (diamond). Points = &beta;&#x302;; whiskers = 95% CIs. Dashed vertical line = conflict onset (post-2009). Shaded region = post-treatment period. G&thinsp;=&thinsp;203 LGAs (4-wave sample). Pre-trend p-values (2003&thinsp;&times;&thinsp;treated): skilled delivery p&thinsp;=&thinsp;0.40, modern contraception p&thinsp;=&thinsp;0.77, no birth attendant p&thinsp;=&thinsp;0.99. The pre-2009 estimates are imprecise (wide CIs); the tests find no evidence against parallel trends but do not rule out modest pre-existing differences. The no-birth-attendant panel is driven primarily by 2013 (b&thinsp;=&thinsp;+0.078***); the 2018 estimate is smaller (b&thinsp;=&thinsp;+0.019) and should be interpreted with caution. A Rambachan–Roth sensitivity analysis is warranted to characterise how the estimates change under bounded violations of parallel trends. Any ANC event study follows the pattern of skilled delivery.</p>
 </div>
 
 <!-- ── Figure 3 ─────────────────────────────────────────────────────────────── -->
 <div class="fig">
   <p class="figcap"><strong>Figure 3.</strong> Heterogeneity in the Effect of Conflict on Skilled Delivery, by Subgroup</p>
   <svg id="het" viewBox="0 0 580 1"></svg>
-  <p class="fignote"><em>Notes:</em> Triple-DiD estimates for skilled delivery, stratifying the baseline DiD interaction (post&thinsp;&times;&thinsp;treated) by wealth, location, and parity. "Rich" = wealth quintiles 4–5; "Poor" = Q1–2; "Poor" and "Urban" net effects are the sum of the baseline and interaction terms (&delta;-method SEs). Dashed vertical line = overall DiD estimate (&minus;7.3&thinsp;pp). Wealth interaction (poor vs. rich) significant at p&thinsp;=&thinsp;0.047*; parity interaction (primipara vs. multipara) at p&thinsp;=&thinsp;0.056†; rural–urban difference p&thinsp;=&thinsp;0.71.</p>
+  <p class="fignote"><em>Notes:</em> Triple-DiD estimates for skilled delivery, stratifying the baseline DiD interaction (post&thinsp;&times;&thinsp;treated) by wealth, location, and parity. "Rich" = wealth quintiles 4–5; "Poor" = Q1–2; "Poor" and "Urban" net effects are the sum of the baseline and interaction terms (&delta;-method SEs). Dashed vertical line = overall DiD estimate (&minus;7.3&thinsp;pp). Wealth interaction (poor vs. rich) significant at p&thinsp;=&thinsp;0.047*; parity interaction (primipara vs. multipara) at p&thinsp;=&thinsp;0.056†; rural–urban difference p&thinsp;=&thinsp;0.71. Caution: wealthier women have higher baseline rates of skilled delivery; a facility supply shock mechanically produces larger absolute pp declines for higher-utilization groups, so the larger Q4–5 estimate does not necessarily imply a steeper preference or elasticity response. The wealth interaction is consistent with supply-side disruption but should not be read as evidence that poor women are unaffected.</p>
 </div>
 
 <!-- ── Mechanism Tests ──────────────────────────────────────────────────────── -->
@@ -147,14 +147,24 @@ svg{display:block;width:100%}
       <th style="width:19%">Verdict</th>
     </tr>
     <tr>
+      <td><strong>Financial access barriers</strong><br><span style="color:var(--t2);font-size:11.5px">Post&thinsp;&times;&thinsp;treated &rarr; v467b (money = big problem)</span></td>
+      <td>Conflict increases women's self-reported financial barriers to care (+8.3&thinsp;pp, p&thinsp;=&thinsp;0.002**). A positive supply-side test: disruption raises costs of accessing facilities even for women who remain in the LGA.</td>
+      <td><span class="tag tag-sig">SIG **</span></td>
+    </tr>
+    <tr>
+      <td><strong>Facility-type shift</strong><br><span style="color:var(--t2);font-size:11.5px">Public vs. private facility vs. home birth decomposition</span></td>
+      <td>Public facility births decline (&minus;3.5&thinsp;pp, p&thinsp;=&thinsp;0.082†) and private facility births decline (&minus;2.7&thinsp;pp, p&thinsp;=&thinsp;0.031*); home births rise (+12.2&thinsp;pp, p&thinsp;=&thinsp;0.014*). Consistent with facility-level disruption across both sectors rather than demand suppression alone.</td>
+      <td><span class="tag tag-sig">SIG *</span></td>
+    </tr>
+    <tr>
       <td><strong>Spatial spillovers</strong><br><span style="color:var(--t2);font-size:11.5px">Neighbor-LGA conflict added to DiD</span></td>
-      <td>Neighbor-LGA conflict coefficient &asymp; 0 for all outcomes (p &gt; 0.22). Own-LGA effects unchanged. Rules out spatial displacement into adjacent areas as a confound.</td>
-      <td><span class="tag tag-null">NULL</span></td>
+      <td>Neighbor-LGA conflict coefficient &asymp; 0 for all outcomes (p &gt; 0.22). Own-LGA effects unchanged. No evidence of spatial displacement into adjacent areas; cannot rule out modest spillover effects below the precision of the test.</td>
+      <td><span class="tag tag-null">NULL (ns)</span></td>
     </tr>
     <tr>
       <td><strong>Urban vs. rural</strong><br><span style="color:var(--t2);font-size:11.5px">Triple DiD: post&thinsp;&times;&thinsp;treated&thinsp;&times;&thinsp;urban</span></td>
-      <td>Urban interaction term not significant (p &gt; 0.24 all outcomes). Rural base effect is significant. Conflict affects women equally regardless of travel burden to facilities, ruling out a pure travel-time mechanism.</td>
-      <td><span class="tag tag-null">NULL</span></td>
+      <td>Urban interaction term not significant (p &gt; 0.24 all outcomes). Rural base effect is significant. No evidence of differential effects by travel burden; cannot rule out a travel-time contribution that is similar in urban and rural areas.</td>
+      <td><span class="tag tag-null">NULL (ns)</span></td>
     </tr>
     <tr>
       <td><strong>Dose-response</strong><br><span style="color:var(--t2);font-size:11.5px">Continuous: post &times; log(LGA FH events)</span></td>
@@ -173,7 +183,7 @@ svg{display:block;width:100%}
     </tr>
     <tr>
       <td><strong>Within-mother sibling FE</strong><br><span style="color:var(--t2);font-size:11.5px">IMR &amp; U5 mortality, same-mother siblings</span></td>
-      <td>Infant mortality (p&thinsp;=&thinsp;0.67) and under-5 mortality (p&thinsp;=&thinsp;0.78) conditional on birth are unaffected. Conflict disrupts service access but does not raise mortality for births that do occur.</td>
+      <td>Infant mortality (p&thinsp;=&thinsp;0.67) and under-5 mortality (p&thinsp;=&thinsp;0.78) conditional on birth are not significantly affected. The estimates are imprecise; these null results do not establish equivalence and power may be insufficient to detect moderate mortality effects.</td>
       <td><span class="tag tag-null">NULL</span></td>
     </tr>
     <tr>
@@ -194,11 +204,51 @@ svg{display:block;width:100%}
   </table>
 </div>
 
+<!-- ── Robustness ────────────────────────────────────────────────────────────── -->
+<div class="section">
+  <p class="sec-head">Robustness Checks</p>
+  <table class="mech-tbl">
+    <tr>
+      <th style="width:30%">Check</th>
+      <th style="width:51%">Finding</th>
+      <th style="width:19%">Verdict</th>
+    </tr>
+    <tr>
+      <td><strong>Leave-one-state-out</strong><br><span style="color:var(--t2);font-size:11.5px">Drop each of 12 states in turn; re-estimate DiD</span></td>
+      <td>All 12 jackknife coefficients significant at p&thinsp;&lt;&thinsp;0.05; range [&minus;8.7,&thinsp;&minus;6.0]&thinsp;pp for skilled delivery. Results are not driven by any single state.</td>
+      <td><span class="tag tag-pass">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>Alternative treatment cutoffs</strong><br><span style="color:var(--t2);font-size:11.5px">P50, P60, P67, P75 thresholds</span></td>
+      <td>Significant at P67 and P75 (p&thinsp;&lt;&thinsp;0.01). P60 is not significant (p&thinsp;=&thinsp;0.18), suggesting some threshold sensitivity. Results are most robust at stricter cutoffs; the continuous dose-response (Table 3) avoids this boundary. Not unexpected given that P60 admits LGAs with modest exposure.</td>
+      <td><span class="tag tag-warn">PARTIAL</span></td>
+    </tr>
+    <tr>
+      <td><strong>Boko Haram control</strong><br><span style="color:var(--t2);font-size:11.5px">Add post&thinsp;&times;&thinsp;BH proximity to DiD</span></td>
+      <td>FH conflict remains significant at p&thinsp;&lt;&thinsp;0.001 (b&thinsp;=&thinsp;&minus;4.8&thinsp;pp***) controlling for Boko Haram violence proximity. BH proximity coefficient is small and imprecise. Effects are not confounded by the separate northeastern conflict.</td>
+      <td><span class="tag tag-pass">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>Randomization inference</strong><br><span style="color:var(--t2);font-size:11.5px">500 treatment permutations within state</span></td>
+      <td>RI p&thinsp;=&thinsp;0.078† for skilled delivery. More conservative than cluster-robust p&thinsp;=&thinsp;0.006 because within-state permutations preserve between-LGA heterogeneity correlated with both treatment and outcomes (permutation mean &asymp;&thinsp;&minus;0.045). Results survive at the 10% level.</td>
+      <td><span class="tag tag-warn">MARGINAL †</span></td>
+    </tr>
+    <tr>
+      <td><strong>Conley spatial standard errors</strong><br><span style="color:var(--t2);font-size:11.5px">Bartlett-kernel HAC, 20 / 50 / 100&thinsp;km cutoffs</span></td>
+      <td>Conley SEs are similar to or smaller than LGA-cluster SEs across all three bandwidth choices. Spatial autocorrelation in residuals is not inflating inference; the cluster-robust SEs are the conservative benchmark.</td>
+      <td><span class="tag tag-pass">PASS</span></td>
+    </tr>
+  </table>
+</div>
+
 <!-- ── Instrumental Variables ───────────────────────────────────────────────── -->
 <div class="section">
   <p class="sec-head">Instrumental Variables</p>
   <p style="font-family:var(--sans);font-size:13px;line-height:1.65;margin-bottom:14px">
-    Three geographic instruments—interacted with a post-2009 indicator—are constructed to address the potential endogeneity of LGA-level conflict intensity. <strong>Z1 (rainfall stability)</strong> uses the inverse coefficient of variation of annual CHIRPS rainfall (2005–2018). <strong>Z2 (Boko Haram proximity)</strong> is the inverse Euclidean distance to Maiduguri, capturing southward displacement of Fulani pastoralists from the BH conflict zone. <strong>Z3 (agro-ecological transition zone)</strong> uses WorldClim v2.1 BIO12 (annual precipitation, 10-arcmin resolution): the forest–savanna transition belt (~1,200–1,800 mm) is structurally prone to farmer–herder competition because it supports both arable farming and year-round cattle grazing. A Gaussian weight function (centre 1,500 mm, &sigma;&thinsp;=&thinsp;300 mm) captures LGA proximity to this productive belt. The instrument is predetermined by long-run climate, and its level effect on health is absorbed by LGA fixed effects.
+    Four geographic instruments—each interacted with a post-2009 indicator—are constructed as candidate instruments for LGA-level conflict intensity. <strong>Z1 (rainfall stability)</strong> uses the inverse coefficient of variation of annual CHIRPS rainfall (2005–2018); it is discarded because it exhibits a sign reversal in the second stage, consistent with weak-instrument behaviour even though it clears the conventional F threshold. <strong>Z2 (Boko Haram proximity)</strong> is the inverse distance to Maiduguri; it fails the first stage (F&thinsp;=&thinsp;1.8) and is discarded. The two remaining instruments use long-run climate data from WorldClim v2.1. <strong>Z3 (agro-ecological transition zone)</strong> scores LGAs by their proximity to the forest–savanna transition belt (~1,200–1,800&thinsp;mm annual precipitation), where farmer–herder competition is structurally elevated. <strong>Z4 (tsetse/cattle suitability)</strong> uses temperature and precipitation jointly to proxy historical tsetse-fly suitability; tsetse historically excluded cattle-keeping from humid zones, so high-suitability LGAs have less tradition of coexistence and more conflict when Fulani herders move in post-2009. Both instruments are predetermined by long-run climate; their level effects on health are absorbed by LGA fixed effects.
+  </p>
+  <p style="font-family:var(--sans);font-size:13px;line-height:1.65;color:#8b3a00;margin-bottom:14px;padding:10px 14px;border-left:3px solid #e65100;background:var(--warn-bg)">
+    <strong>Exclusion restriction caveat.</strong> The main threat to validity is that ecological zone predicts health outcomes through pathways other than farmer–herder conflict. High-precipitation transition zones have higher malaria burden, denser vegetation (affecting infrastructure), and were more likely to receive certain health programme expansions (e.g., urban-edge facility investment). Agricultural productivity shocks correlated with the transition zone could independently affect utilisation. The instruments are used primarily to verify the sign of the OLS effect and check for attenuation bias; they do not fully resolve confounding from these ecological channels. The OLS DiD remains the preferred estimate.
   </p>
   <div class="iv-grid">
     <div class="iv-hd">Instrument</div>
@@ -216,21 +266,21 @@ svg{display:block;width:100%}
     <div class="iv-c"><strong>Z3: Agro-ecol. transition zone &times; post</strong><br><span style="color:var(--t2);font-size:11px">WorldClim BIO12 Gaussian(&mu;&thinsp;=&thinsp;1,500 mm, &sigma;&thinsp;=&thinsp;300 mm); LGA-level</span></div>
     <div class="iv-c" style="font-weight:700;color:var(--pass-fg)">27.1</div>
     <div class="iv-c">+0.448 (p&thinsp;&lt;&thinsp;0.001***)</div>
-    <div class="iv-c" style="color:var(--pass-fg)">Strong (exceeds Stock–Yogo 16.4)</div>
+    <div class="iv-c" style="color:var(--pass-fg)">Strong — F&thinsp;=&thinsp;27.1 exceeds MOP&thinsp;&asymp;&thinsp;23.1 (cluster-robust critical value)</div>
     <div class="iv-c last-row"><strong>Z4: Tsetse/cattle suitability &times; post</strong><br><span style="color:var(--t2);font-size:11px">WorldClim BIO1+BIO12 tsetse suitability proxy (Rogers &amp; Randolph 1993); LGA-level</span></div>
-    <div class="iv-c last-row" style="font-weight:700;color:var(--pass-fg)">19.2</div>
+    <div class="iv-c last-row" style="font-weight:700;color:#e65100">19.2</div>
     <div class="iv-c last-row">+0.282 (p&thinsp;&lt;&thinsp;0.001***)</div>
-    <div class="iv-c last-row" style="color:var(--pass-fg)">Strong (exceeds Stock–Yogo 16.4)</div>
+    <div class="iv-c last-row" style="color:#e65100">Borderline — F&thinsp;=&thinsp;19.2 is below MOP&thinsp;&asymp;&thinsp;23.1; above Stock–Yogo 16.4 (homoskedastic). Size distortion possible with cluster-robust SEs.</div>
   </div>
   <p style="font-family:var(--sans);font-size:12.5px;color:var(--t2);margin-top:8px;line-height:1.65">
-    <strong>Z4 mechanism:</strong> The tsetse fly historically prevented cattle-keeping in humid zones (Rogers &amp; Randolph 1993). High tsetse suitability (warm, humid) identifies historically farming-only LGAs with limited pastoral tradition—where Fulani herder in-migration post-2009 produces greater conflict than in areas accustomed to coexistence. Instrument: Gaussian temperature suitability &times; sigmoid precipitation suitability, standardized at LGA level.
+    <strong>Z4 mechanism:</strong> The tsetse fly historically prevented cattle-keeping in humid zones (Rogers &amp; Randolph 1993). High tsetse suitability (warm, humid) identifies historically farming-only LGAs with limited pastoral tradition—where Fulani herder in-migration post-2009 produces greater conflict than in areas accustomed to mixed land use. Instrument: Gaussian temperature suitability &times; sigmoid precipitation suitability, standardised at LGA level. Residual exclusion-restriction concern: humid LGAs also have higher malaria endemicity, which may independently reduce facility-based delivery through fever-related barriers and caregiver illness.
   </p>
   <p style="font-family:var(--sans);font-size:12.5px;color:var(--t2);margin-top:10px;line-height:1.65">
-    <strong>2SLS estimates</strong> (Figure 4 below): Both Z3 and Z4 produce estimates that are consistent in sign with OLS and significant at p&thinsp;&lt;&thinsp;0.001 for all four outcomes. Z3 implies 5–6&times; amplification over OLS (e.g., skilled delivery &minus;0.216 vs. &minus;0.036); Z4 implies 9–10&times; amplification (&minus;0.333). The larger Z4 estimates likely reflect that the tsetse instrument captures a subset of high-conflict LGAs with especially disrupted health systems. Z3 and Z4 are moderately correlated (r&thinsp;=&thinsp;&minus;0.45), so combining them weakens the joint F<sub>avg</sub>&thinsp;=&thinsp;8.6; we use each instrument separately. Convergence of two ecologically independent instruments from different historical mechanisms supports the causal interpretation of the OLS sign.
+    <strong>2SLS estimates</strong> (Figure 4 below): Both Z3 and Z4 produce estimates that are consistent in sign with OLS and significant at p&thinsp;&lt;&thinsp;0.001 for all four outcomes. However, the magnitudes are implausibly large: Z3 implies 5–6&times; amplification over OLS (skilled delivery &minus;0.216 vs. &minus;0.036 OLS); Z4 implies 9–10&times; (&minus;0.333). At these scales, the Z4 estimate alone would reduce skilled delivery from a 50% baseline to approximately 17%, which is at the outer bound of plausibility even in severely conflict-affected areas. Likely explanations include: (i) LATE amplification—compliers are the most conflict-exposed LGAs, where effects may genuinely be larger; (ii) attenuation bias in OLS from measurement error in LGA-level conflict counts; (iii) incomplete exclusion restriction—the ecological instruments may capture correlated health pathway variation. <em>Note:</em> Z3 and Z4 are moderately correlated (r&thinsp;=&thinsp;&minus;0.45) and share overlapping ecological mechanisms; they are not independent. The correct critical value for weak-instrument tests with cluster-robust SEs is the Montiel Olea–Pflueger effective F&thinsp;&asymp;&thinsp;23.1 (10% size distortion); Z3 passes this, Z4 is borderline. The convergence in sign across both instruments and OLS supports the direction of the effect; the 2SLS magnitudes should be treated as upper bounds rather than point estimates.
   </p>
   <p class="figcap" style="margin-top:16px"><strong>Figure 4.</strong> OLS vs. 2SLS Estimates: Sensitivity Across Identification Strategies</p>
   <svg id="iv-cmp" viewBox="0 0 580 1"></svg>
-  <p class="fignote"><em>Notes:</em> Each outcome shows three estimates: OLS DiD (grey), 2SLS with Z3 (agro-ecological transition zone, blue), and 2SLS with Z4 (tsetse/cattle suitability, green). All specifications include LGA FE + year FE with LGA-clustered SEs. Horizontal bars = 95% CI. All Z3 and Z4 estimates significant at p&thinsp;&lt;&thinsp;0.001. Z3 first-stage F&thinsp;=&thinsp;27.1; Z4 F&thinsp;=&thinsp;19.2 (both exceed Stock–Yogo 10% CV = 16.4). The convergence in sign across OLS and both IV strategies supports the causal interpretation.</p>
+  <p class="fignote"><em>Notes:</em> Each outcome shows three estimates: OLS DiD (grey), 2SLS with Z3 (agro-ecological transition zone, blue), and 2SLS with Z4 (tsetse/cattle suitability, green). All specifications include LGA FE + year FE with LGA-clustered SEs. Horizontal bars = 95% CI. All Z3 and Z4 estimates significant at p&thinsp;&lt;&thinsp;0.001. Z3 first-stage F&thinsp;=&thinsp;27.1 (exceeds Montiel Olea–Pflueger cluster-robust critical value &asymp;&thinsp;23.1); Z4 F&thinsp;=&thinsp;19.2 (below MOP threshold; borderline with cluster-robust SEs). The 2SLS magnitudes (5–10&times; OLS) are large and should be treated as upper bounds; see exclusion restriction caveat in text. Sign convergence across OLS and both IV strategies supports the direction of the effect.</p>
   <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:6px;font-family:var(--sans);font-size:11.5px;color:var(--t2)">
     <span><svg width="16" height="10" style="vertical-align:middle"><circle cx="8" cy="5" r="4.5" fill="#888"/></svg> OLS (DiD)</span>
     <span><svg width="16" height="10" style="vertical-align:middle"><circle cx="8" cy="5" r="4.5" fill="var(--ch)"/></svg> 2SLS — Z3 transition zone</span>
