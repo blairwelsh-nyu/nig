@@ -137,6 +137,38 @@ svg{display:block;width:100%}
   <p class="fignote"><em>Notes:</em> Triple-DiD estimates for skilled delivery, stratifying the baseline DiD interaction (post&thinsp;&times;&thinsp;treated) by wealth, location, and parity. "Rich" = wealth quintiles 4–5; "Poor" = Q1–2; "Poor" and "Urban" net effects are the sum of the baseline and interaction terms (&delta;-method SEs). Dashed vertical line = overall DiD estimate (&minus;7.3&thinsp;pp). Wealth interaction (poor vs. rich) significant at p&thinsp;=&thinsp;0.047*; parity interaction (primipara vs. multipara) at p&thinsp;=&thinsp;0.056†; rural–urban difference p&thinsp;=&thinsp;0.71. Caution: wealthier women have higher baseline rates of skilled delivery; a facility supply shock mechanically produces larger absolute pp declines for higher-utilization groups, so the larger Q4–5 estimate does not necessarily imply a steeper preference or elasticity response. The wealth interaction is consistent with supply-side disruption but should not be read as evidence that poor women are unaffected.</p>
 </div>
 
+<!-- ── Additional Outcomes ───────────────────────────────────────────────────── -->
+<div class="section">
+  <p class="sec-head">Additional Outcomes (Birth Subsample, N&thinsp;=&thinsp;21,517)</p>
+  <table class="mech-tbl">
+    <tr>
+      <th style="width:30%">Outcome</th>
+      <th style="width:51%">Finding (birth subsample; LGA+year FE; +education control)</th>
+      <th style="width:19%">Verdict</th>
+    </tr>
+    <tr>
+      <td><strong>4+ ANC visits</strong><br><span style="color:var(--t2);font-size:11.5px">WHO recommended minimum; m14_1 &ge; 4</span></td>
+      <td>Baseline: 40% of women in control-2008 group have 4+ ANC visits. DiD: &minus;11.8&thinsp;pp* (p&thinsp;=&thinsp;0.014; 95%&thinsp;CI [&minus;21.1,&thinsp;&minus;2.5]); q&thinsp;=&thinsp;0.021*. Adding education control: &minus;5.6&thinsp;pp† (p&thinsp;=&thinsp;0.093). The BH-adjusted result is significant in the primary model; attenuation with education control (52% reduction) is consistent with compositional upward bias. Conflict disrupts not just initiation of antenatal care but the completion of the recommended 4-visit schedule.</td>
+      <td><span class="tag tag-sig">SIG *<br><span style="font-weight:400">q=0.021*; +edu:†</span></span></td>
+    </tr>
+    <tr>
+      <td><strong>First-trimester ANC initiation</strong><br><span style="color:var(--t2);font-size:11.5px">First ANC visit in month 1–3 of pregnancy; m13_1 &le; 3</span></td>
+      <td>Baseline: 14.9% of women initiate ANC in the first trimester. DiD: &minus;11.7&thinsp;pp** (p&thinsp;=&thinsp;0.003; 95%&thinsp;CI [&minus;19.5,&thinsp;&minus;4.0]); q&thinsp;=&thinsp;0.010*. Adding education control: &minus;9.0&thinsp;pp** (p&thinsp;=&thinsp;0.007). Robust to education composition adjustment. Effect is proportionally large (11.7&thinsp;pp on a 14.9% base = &minus;79% relative). Conflict substantially delays or eliminates first-trimester prenatal care initiation, consistent with travel-risk and financial access barriers acting earliest in pregnancy.</td>
+      <td><span class="tag tag-sig">SIG **<br><span style="font-weight:400">q=0.010*; robust to edu</span></span></td>
+    </tr>
+    <tr>
+      <td><strong>Postnatal check</strong><br><span style="color:var(--t2);font-size:11.5px">Respondent had any health check after delivery; m50_1</span></td>
+      <td>Baseline: 10.6% of women have any postnatal check. DiD: &minus;3.9&thinsp;pp* (p&thinsp;=&thinsp;0.041; 95%&thinsp;CI [&minus;7.6,&thinsp;&minus;0.2]); q&thinsp;=&thinsp;0.041*. Adding education control: &minus;1.6&thinsp;pp (p&thinsp;=&thinsp;0.34, ns). The point estimate without education control represents a 37% relative decline; this attenuates substantially once education composition is held fixed. Postnatal care has the lowest absolute baseline and the most unstable conflict effect.</td>
+      <td><span class="tag tag-warn">MARGINAL *<br><span style="font-weight:400">+edu: ns</span></span></td>
+    </tr>
+    <tr>
+      <td><strong>Caesarean delivery</strong><br><span style="color:var(--t2);font-size:11.5px">Delivery by C-section; m17_1</span></td>
+      <td>Baseline: 1.2% C-section rate. DiD: &minus;0.8&thinsp;pp (p&thinsp;=&thinsp;0.12, ns). The null result is uninformative given the extremely low baseline rate; a 1&thinsp;pp absolute change would represent an 83% relative effect and lies outside the precision of this study design. Under-powered by construction at 1.2% baseline. The null cannot establish equivalence.</td>
+      <td><span class="tag tag-null">NULL (underpowered)</span></td>
+    </tr>
+  </table>
+</div>
+
 <!-- ── Mechanism Tests ──────────────────────────────────────────────────────── -->
 <div class="section">
   <p class="sec-head">Mechanism Tests &amp; Robustness</p>
@@ -148,7 +180,7 @@ svg{display:block;width:100%}
     </tr>
     <tr>
       <td><strong>Financial access barriers</strong><br><span style="color:var(--t2);font-size:11.5px">Post&thinsp;&times;&thinsp;treated &rarr; v467b/c/d separately</span></td>
-      <td>Money barrier (+8.3&thinsp;pp, p&thinsp;=&thinsp;0.002**) is statistically significant. Distance to facility (+0.0&thinsp;pp, p&thinsp;=&thinsp;0.96) is a precise null. "Not wanting to go alone" (+8.0&thinsp;pp, p&thinsp;=&thinsp;0.14) has a large point estimate (similar magnitude to the money barrier) but high imprecision; describing it as "unaffected" is not warranted—this item may reflect security concerns as much as social norms, and its effect cannot be distinguished from zero with available power.</td>
+      <td>On the birth subsample (N&thinsp;=&thinsp;21,517): money barrier +8.6&thinsp;pp** (p&thinsp;=&thinsp;0.005; q&thinsp;=&thinsp;0.016*); with education control +6.7&thinsp;pp* (p&thinsp;=&thinsp;0.011). Distance to facility +0.02&thinsp;pp (p&thinsp;=&thinsp;0.99); with education control &minus;3.3&thinsp;pp (ns). "Not wanting to go alone" +8.7&thinsp;pp (p&thinsp;=&thinsp;0.12, ns); with education control +5.0&thinsp;pp (ns). The money barrier is robust to education adjustment and survives BH correction; the distance barrier is a precise null on raw data and cannot rule out a moderate negative effect once education is controlled; the "alone" barrier remains imprecisely estimated. The money barrier effect (+8.6&thinsp;pp on a roughly 30% baseline) confirms a supply-side financial barrier as the primary mechanism.</td>
       <td><span class="tag tag-sig">SIG **</span></td>
     </tr>
     <tr>
@@ -158,7 +190,7 @@ svg{display:block;width:100%}
     </tr>
     <tr>
       <td><strong>Birth attendant decomposition</strong><br><span style="color:var(--t2);font-size:11.5px">Doctor / nurse / auxiliary / TBA / no one</span></td>
-      <td>Recoded as mutually exclusive highest-qualified attendant (HQA: doctor &gt; nurse/midwife &gt; auxiliary &gt; TBA &gt; no one &gt; other; sum verified&thinsp;=&thinsp;0.00). Skilled providers decline: doctor &minus;4.1&thinsp;pp (p&thinsp;=&thinsp;0.061†); nurse/midwife &minus;12.1&thinsp;pp** (p&thinsp;=&thinsp;0.004); auxiliary &minus;1.5&thinsp;pp (ns). Traditional/absent categories rise: TBA +16.2&thinsp;pp** (p&thinsp;=&thinsp;0.002); no attendant +8.5&thinsp;pp** (p&thinsp;=&thinsp;0.002); other attendant (relative/friend, 37.8% of births) &minus;7.0&thinsp;pp (ns). Skilled total: &minus;17.7&thinsp;pp; traditional&thinsp;+&thinsp;none total: +17.7&thinsp;pp—equal and opposite by construction. Nurse/midwives bear the largest absolute skilled-care loss; the TBA rebound confirms substitution toward traditional care rather than a wholesale reduction in attended births.</td>
+      <td>Recoded as mutually exclusive highest-qualified attendant (HQA: doctor &gt; nurse/midwife &gt; auxiliary &gt; TBA &gt; no one &gt; other; sum verified&thinsp;=&thinsp;0.00; birth subsample N&thinsp;=&thinsp;21,517). <em>Without education control:</em> skilled providers decline: doctor &minus;4.1&thinsp;pp (p&thinsp;=&thinsp;0.061†); nurse/midwife &minus;12.1&thinsp;pp** (p&thinsp;=&thinsp;0.004); auxiliary &minus;1.5&thinsp;pp (ns). Traditional/absent categories rise: TBA +16.2&thinsp;pp** (p&thinsp;=&thinsp;0.002); no attendant +8.5&thinsp;pp** (p&thinsp;=&thinsp;0.002); other attendant (relative/friend) &minus;7.0&thinsp;pp (ns). Skilled total: &minus;17.7&thinsp;pp; traditional&thinsp;+&thinsp;none total: +17.7&thinsp;pp—equal and opposite by construction. <em>With education control:</em> nurse/midwife &minus;7.0&thinsp;pp* (p&thinsp;=&thinsp;0.015); TBA +13.9&thinsp;pp** (p&thinsp;=&thinsp;0.004); no attendant +6.3&thinsp;pp* (p&thinsp;=&thinsp;0.013); doctor &minus;2.4&thinsp;pp (ns). The nurse/midwife and TBA shifts survive education adjustment; the substitution pattern is not entirely explained by compositional change.</td>
       <td><span class="tag tag-sig">SIG **</span></td>
     </tr>
     <tr>
@@ -239,8 +271,8 @@ svg{display:block;width:100%}
       <td><span class="tag tag-pass">PASS</span></td>
     </tr>
     <tr>
-      <td><strong>Randomization inference</strong><br><span style="color:var(--t2);font-size:11.5px">500 treatment permutations within state</span></td>
-      <td>An Anderson&ndash;Kling summary index on the birth subsample (z-scores, control-2008 baseline) yields &minus;0.32 SDs (p&thinsp;=&thinsp;0.003**) without state&thinsp;&times;&thinsp;year FE; with state&thinsp;&times;&thinsp;year FE, &minus;0.088 SDs (p&thinsp;=&thinsp;0.299). Within-state RI on the state&thinsp;&times;&thinsp;year-FE model (500 perms): permutation distribution mean &asymp;&thinsp;&minus;0.003 (properly centred near zero); RI p&thinsp;=&thinsp;0.274. BH q-values within outcome families (no state&thinsp;&times;&thinsp;year FE): all four main outcomes q&thinsp;&lt;&thinsp;0.05*; money barrier q&thinsp;=&thinsp;0.007**; HQA nurse, TBA, no-one q&thinsp;&le;&thinsp;0.007**; facility types q&thinsp;&le;&thinsp;0.046*. The summary index is significant at p&thinsp;=&thinsp;0.003 without state&thinsp;&times;&thinsp;year FE; the RI permutation test (with state&thinsp;&times;&thinsp;year FE, properly centred) does not reject the null at conventional levels (p&thinsp;=&thinsp;0.274).</td>
+      <td><strong>Randomization inference &amp; multiple testing</strong><br><span style="color:var(--t2);font-size:11.5px">500 treatment permutations within state; BH q-values</span></td>
+      <td>An Anderson&ndash;Kling summary index on the birth subsample (z-scores, control-2008 baseline) yields &minus;0.32 SDs (p&thinsp;=&thinsp;0.003**) without state&thinsp;&times;&thinsp;year FE; with state&thinsp;&times;&thinsp;year FE, &minus;0.088 SDs (p&thinsp;=&thinsp;0.299). Within-state RI on the state&thinsp;&times;&thinsp;year-FE model (500 perms): permutation distribution mean &asymp;&thinsp;&minus;0.003 (properly centred near zero); RI p&thinsp;=&thinsp;0.274. <strong>BH q-values under the primary birth-subsample model</strong> (no state&thinsp;&times;&thinsp;year FE): primary outcomes family — skilled delivery q&thinsp;=&thinsp;0.006**, any ANC q&thinsp;=&thinsp;0.006**, no attendant q&thinsp;=&thinsp;0.006**; facility delivery q&thinsp;=&thinsp;0.168 (ns). Additional ANC family — 4+ ANC visits q&thinsp;=&thinsp;0.021*, first-trimester ANC q&thinsp;=&thinsp;0.010*, postnatal check q&thinsp;=&thinsp;0.041*. Mechanisms family — money barrier q&thinsp;=&thinsp;0.016*; distance barrier q&thinsp;=&thinsp;0.994 (ns); "alone" barrier q&thinsp;=&thinsp;0.178 (ns). HQA components (no state&thinsp;&times;&thinsp;year FE): nurse q&thinsp;&le;&thinsp;0.007**, TBA q&thinsp;&le;&thinsp;0.007**, no-one q&thinsp;&le;&thinsp;0.007**. The summary index is significant at p&thinsp;=&thinsp;0.003 without state&thinsp;&times;&thinsp;year FE; the RI permutation test (with state&thinsp;&times;&thinsp;year FE, properly centred) does not reject the null at conventional levels (p&thinsp;=&thinsp;0.274).</td>
       <td><span class="tag tag-warn">PARTIAL<br><span style="font-weight:400">+SFE: ns</span></span></td>
     </tr>
     <tr>
