@@ -5,72 +5,88 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Conflict Health Nigeria</title>
 <style>
-:root {
-  --bg:       #fafaf8;
-  --surface:  #ffffff;
-  --border:   #ddd;
-  --t1:       #1a1a1a;
-  --t2:       #555555;
-  --t3:       #999999;
-  --ch:       #1b6bb5;   /* health series */
-  --ce:       #b86e18;   /* education series */
-  --czero:    #aaaaaa;
-  --serif:    Georgia, 'Times New Roman', serif;
-  --sans:     system-ui, -apple-system, sans-serif;
+:root{
+  --bg:#fafaf8;--surface:#ffffff;--border:#ddd;
+  --t1:#1a1a1a;--t2:#555555;--t3:#999999;
+  --ch:#1b6bb5;--ce:#b86e18;--czero:#aaaaaa;
+  --pass-bg:#e8f5e9;--pass-fg:#2e7d32;
+  --sig-bg:#e3f2fd;--sig-fg:#1b6bb5;
+  --warn-bg:#fff3e0;--warn-fg:#e65100;
+  --null-bg:#f0f0f0;--null-fg:#888888;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:system-ui,-apple-system,sans-serif;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #111318; --surface: #1a1d26; --border: #2a2e3a;
-    --t1: #e8e8e0; --t2: #9090a8; --t3: #5a5a78;
-    --ch: #5ba4e8; --ce: #e0a04c; --czero: #5a5a78;
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#111318;--surface:#1a1d26;--border:#2a2e3a;
+    --t1:#e8e8e0;--t2:#9090a8;--t3:#5a5a78;
+    --ch:#5ba4e8;--ce:#e0a04c;--czero:#5a5a78;
+    --pass-bg:#1b3a1d;--pass-fg:#66bb6a;
+    --sig-bg:#0d2a3a;--sig-fg:#5ba4e8;
+    --warn-bg:#3a2000;--warn-fg:#ffa040;
+    --null-bg:#252530;--null-fg:#777;
   }
 }
-:root[data-theme="dark"] {
-  --bg: #111318; --surface: #1a1d26; --border: #2a2e3a;
-  --t1: #e8e8e0; --t2: #9090a8; --t3: #5a5a78;
-  --ch: #5ba4e8; --ce: #e0a04c; --czero: #5a5a78;
+:root[data-theme="dark"]{
+  --bg:#111318;--surface:#1a1d26;--border:#2a2e3a;
+  --t1:#e8e8e0;--t2:#9090a8;--t3:#5a5a78;
+  --ch:#5ba4e8;--ce:#e0a04c;--czero:#5a5a78;
+  --pass-bg:#1b3a1d;--pass-fg:#66bb6a;
+  --sig-bg:#0d2a3a;--sig-fg:#5ba4e8;
+  --warn-bg:#3a2000;--warn-fg:#ffa040;
+  --null-bg:#252530;--null-fg:#777;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--t1);font-family:var(--serif);font-size:15px;
      line-height:1.65;padding:32px 16px 56px}
 .page{max-width:820px;margin:0 auto}
-
-/* Header */
 .ptitle{font-size:21px;font-weight:700;line-height:1.3;text-align:center;margin-bottom:6px}
 .pmeta{text-align:center;color:var(--t2);font-size:12.5px;font-family:var(--sans);
        margin-bottom:28px;letter-spacing:.01em}
-
-/* Abstract */
 .abs{background:var(--surface);border:1px solid var(--border);border-radius:5px;
      padding:20px 24px;margin-bottom:36px}
 .abs-head{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;
           color:var(--t2);font-family:var(--sans);margin-bottom:10px}
-.abs p{font-size:14px;line-height:1.72;color:var(--t1)}
-
-/* Figures */
+.abs p{font-size:14px;line-height:1.72}
 .fig{margin-bottom:48px}
 .figcap{font-family:var(--sans);font-size:13px;margin-bottom:14px;line-height:1.45}
 .figcap strong{font-size:13px}
 .fignote{font-family:var(--sans);font-size:11.5px;color:var(--t2);line-height:1.55;margin-top:14px}
-
-/* Panel rows */
-.pr{display:flex;gap:0;align-items:flex-start}
-.pa{flex:3;min-width:0}
-.pb{flex:1.1;border-left:1px solid var(--border);padding-left:18px;min-width:0}
 .plabel{font-family:var(--sans);font-size:10.5px;font-weight:700;text-transform:uppercase;
         letter-spacing:.07em;color:var(--t2);margin-bottom:8px}
 .esgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-@media(max-width:600px){
-  .pr{flex-direction:column}
-  .pb{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:14px;margin-top:14px}
-  .esgrid{grid-template-columns:1fr}
-}
+@media(max-width:600px){.esgrid{grid-template-columns:1fr}}
 svg{display:block;width:100%}
-
-/* Tooltip */
+.section{margin-bottom:48px}
+.sec-head{font-family:var(--sans);font-size:11px;font-weight:700;text-transform:uppercase;
+          letter-spacing:.09em;color:var(--t2);margin-bottom:16px;padding-bottom:7px;
+          border-bottom:1.5px solid var(--border)}
+.mech-tbl{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:12.5px}
+.mech-tbl th{text-align:left;color:var(--t2);font-weight:600;padding:5px 10px 7px;
+             font-size:11px;text-transform:uppercase;letter-spacing:.06em;
+             border-bottom:1.5px solid var(--border)}
+.mech-tbl td{padding:8px 10px;border-bottom:1px solid var(--border);
+             vertical-align:top;line-height:1.5}
+.mech-tbl tr:last-child td{border-bottom:none}
+.tag{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;
+     font-weight:700;font-family:var(--sans);white-space:nowrap}
+.tag-null{background:var(--null-bg);color:var(--null-fg)}
+.tag-pass{background:var(--pass-bg);color:var(--pass-fg)}
+.tag-sig{background:var(--sig-bg);color:var(--sig-fg)}
+.tag-warn{background:var(--warn-bg);color:var(--warn-fg)}
+.iv-grid{display:grid;grid-template-columns:2.1fr .9fr 1.1fr 1.5fr;
+         border:1px solid var(--border);border-radius:5px;overflow:hidden;
+         font-family:var(--sans);font-size:12.5px;margin-top:10px}
+.iv-hd{padding:6px 12px;background:var(--surface);color:var(--t2);
+       font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+       border-bottom:1.5px solid var(--border)}
+.iv-c{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+.iv-c.last-row{border-bottom:none}
+@media(max-width:600px){.iv-grid{grid-template-columns:1fr}}
 .tt{position:fixed;background:var(--surface);border:1px solid var(--border);border-radius:5px;
     padding:8px 12px;font-family:var(--sans);font-size:12px;line-height:1.55;pointer-events:none;
-    opacity:0;transition:opacity .08s;z-index:1000;max-width:210px;box-shadow:0 2px 10px rgba(0,0,0,.13)}
+    opacity:0;transition:opacity .08s;z-index:1000;max-width:210px;
+    box-shadow:0 2px 10px rgba(0,0,0,.13)}
 .tt.on{opacity:1}
 .tt strong{color:var(--t1)}
 .tt span{color:var(--t2)}
@@ -84,26 +100,17 @@ svg{display:block;width:100%}
 
 <div class="abs">
   <p class="abs-head">Abstract</p>
-  <p>We estimate the effect of farmer–herder conflict on women's healthcare utilization and educational attainment in Nigeria's Middle Belt. Using a difference-in-differences design that exploits variation in post-2009 Armed Conflict Location and Event Data (ACLED) conflict intensity across Local Government Areas, we compare outcomes in high-conflict (top-tercile) and low-conflict LGAs before (2003, 2008) and after (2013, 2018) the escalation of interethnic violence. Women in high-conflict LGAs experienced significant declines in skilled birth attendance (&minus;6.9 percentage points), any prenatal care visits (&minus;5.3&thinsp;pp), and modern contraceptive use (&minus;5.4&thinsp;pp), alongside a 2.0-year reduction in completed schooling. A four-wave event study—exploiting the 2003 DHS as a genuine pre-treatment wave—confirms parallel trends for all primary outcomes and documents effects escalating after 2013. A placebo test using pre-2009 conflict intensity yields uniformly null results, ruling out selection on pre-existing differences. Together, the findings suggest that interethnic conflict disrupts access to formal health and education services beyond the direct costs of violence, with implications for public health delivery in conflict-affected regions.</p>
+  <p>We estimate the causal effect of farmer–herder conflict on women's healthcare utilization in Nigeria's Middle Belt. Using a four-wave difference-in-differences design (2003, 2008, 2013, 2018) that exploits variation in post-2009 ACLED conflict intensity across Local Government Areas, we find that women in high-conflict LGAs experienced significant declines in skilled birth attendance (&minus;7.3 percentage points), prenatal care visits (&minus;5.6&thinsp;pp), and modern contraceptive use (&minus;5.3&thinsp;pp), alongside a 5.3&thinsp;pp increase in unattended births. A four-wave event study—exploiting the 2003 DHS as a genuine pre-treatment wave—confirms parallel pre-trends for all outcomes. Mechanistic tests consistently point to supply-side disruption of health services as the primary channel: spatial spillovers are absent, rural and urban women are equally affected, wealthier women bear disproportionately larger reductions in skilled delivery (inconsistent with income loss), within-mother sibling fixed effects show no impact on infant mortality conditional on birth, and a dose-response gradient is monotone and highly significant. These findings indicate that interethnic conflict imposes health access costs well beyond the direct harm of violence, with implications for health system resilience in conflict-prone regions.</p>
 </div>
 
-<!-- Figure 1 -->
+<!-- ── Figure 1 ─────────────────────────────────────────────────────────────── -->
 <div class="fig">
-  <p class="figcap"><strong>Figure 1.</strong> Effect of Farmer–Herder Conflict on Healthcare Utilization and Educational Attainment</p>
-  <div class="pr">
-    <div class="pa">
-      <p class="plabel">A &nbsp;·&nbsp; Healthcare (percentage points)</p>
-      <svg id="cv-h" viewBox="0 0 460 178"></svg>
-    </div>
-    <div class="pb">
-      <p class="plabel">B &nbsp;·&nbsp; Education (years)</p>
-      <svg id="cv-e" viewBox="0 0 190 95"></svg>
-    </div>
-  </div>
-  <p class="fignote"><em>Notes:</em> Difference-in-differences estimates. Treatment = LGA in top tercile of farmer–herder ACLED events, 2009–2018. All specifications include LGA fixed effects, survey-year fixed effects, and LGA-clustered standard errors. Sample: N&thinsp;≈&thinsp;39,000 women from Nigeria DHS 2008–2018, 12 Middle Belt states. Horizontal bars = 95% confidence intervals. *** p&lt;0.001, ** p&lt;0.01, * p&lt;0.05, † p&lt;0.10.</p>
+  <p class="figcap"><strong>Figure 1.</strong> Difference-in-Differences Estimates: Farmer–Herder Conflict and Healthcare Utilization</p>
+  <svg id="cv-h" viewBox="0 0 580 224"></svg>
+  <p class="fignote"><em>Notes:</em> Difference-in-differences estimates. Treatment = LGA in top tercile of farmer–herder ACLED events, 2009–2018. All specifications include LGA fixed effects, survey-year fixed effects, and LGA-clustered standard errors (G&thinsp;=&thinsp;182 LGAs). Sample: N&thinsp;&asymp;&thinsp;36,000 women from Nigeria DHS 2008–2018, 12 Middle Belt states. Horizontal bars = 95% confidence intervals. *** p&lt;0.001, ** p&lt;0.01, * p&lt;0.05, † p&lt;0.10. "No birth attendant" (amber) indicates an increase in harmful unattended births.</p>
 </div>
 
-<!-- Figure 2 -->
+<!-- ── Figure 2 ─────────────────────────────────────────────────────────────── -->
 <div class="fig">
   <p class="figcap"><strong>Figure 2.</strong> Event Study: Pre-trends and Dynamic Treatment Effects</p>
   <div class="esgrid">
@@ -116,220 +123,329 @@ svg{display:block;width:100%}
       <svg id="es-mc" viewBox="0 0 220 200"></svg>
     </div>
     <div>
-      <p class="plabel">Years of education</p>
-      <svg id="es-ed" viewBox="0 0 220 200"></svg>
+      <p class="plabel">No birth attendant</p>
+      <svg id="es-na" viewBox="0 0 220 200"></svg>
     </div>
   </div>
-  <p class="fignote"><em>Notes:</em> Survey-year × treatment interaction coefficients from 4-wave DiD (2003, 2008, 2013, 2018). Base year 2008 = 0 by construction (diamond). Points = β̂; whiskers = 95% CIs. Dashed vertical line marks conflict onset (post-2009). Shaded region = post-treatment period. G&thinsp;=&thinsp;203 LGAs in Middle Belt. ANC event study not shown; coefficients follow the pattern of skilled delivery. Pre-trend p-values (2003&thinsp;×&thinsp;treated): skilled delivery p&thinsp;=&thinsp;0.40, modern contraception p&thinsp;=&thinsp;0.77.</p>
+  <p class="fignote"><em>Notes:</em> Survey-year &times; treatment interaction coefficients from 4-wave DiD (2003, 2008, 2013, 2018). Base year 2008 = 0 by construction (diamond). Points = &beta;&#x302;; whiskers = 95% CIs. Dashed vertical line = conflict onset (post-2009). Shaded region = post-treatment period. G&thinsp;=&thinsp;203 LGAs. Pre-trend p-values (2003&thinsp;&times;&thinsp;treated): skilled delivery p&thinsp;=&thinsp;0.40, modern contraception p&thinsp;=&thinsp;0.77, no birth attendant p&thinsp;=&thinsp;0.99. Any ANC event study follows the pattern of skilled delivery.</p>
 </div>
 
+<!-- ── Figure 3 ─────────────────────────────────────────────────────────────── -->
+<div class="fig">
+  <p class="figcap"><strong>Figure 3.</strong> Heterogeneity in the Effect of Conflict on Skilled Delivery, by Subgroup</p>
+  <svg id="het" viewBox="0 0 580 1"></svg>
+  <p class="fignote"><em>Notes:</em> Triple-DiD estimates for skilled delivery, stratifying the baseline DiD interaction (post&thinsp;&times;&thinsp;treated) by wealth, location, and parity. "Rich" = wealth quintiles 4–5; "Poor" = Q1–2; "Poor" and "Urban" net effects are the sum of the baseline and interaction terms (&delta;-method SEs). Dashed vertical line = overall DiD estimate (&minus;7.3&thinsp;pp). Wealth interaction (poor vs. rich) significant at p&thinsp;=&thinsp;0.047*; parity interaction (primipara vs. multipara) at p&thinsp;=&thinsp;0.056†; rural–urban difference p&thinsp;=&thinsp;0.71.</p>
 </div>
+
+<!-- ── Mechanism Tests ──────────────────────────────────────────────────────── -->
+<div class="section">
+  <p class="sec-head">Mechanism Tests &amp; Robustness</p>
+  <table class="mech-tbl">
+    <tr>
+      <th style="width:30%">Test</th>
+      <th style="width:51%">Finding</th>
+      <th style="width:19%">Verdict</th>
+    </tr>
+    <tr>
+      <td><strong>Spatial spillovers</strong><br><span style="color:var(--t2);font-size:11.5px">Neighbor-LGA conflict added to DiD</span></td>
+      <td>Neighbor-LGA conflict coefficient &asymp; 0 for all outcomes (p &gt; 0.22). Own-LGA effects unchanged. Rules out spatial displacement into adjacent areas as a confound.</td>
+      <td><span class="tag tag-null">NULL</span></td>
+    </tr>
+    <tr>
+      <td><strong>Urban vs. rural</strong><br><span style="color:var(--t2);font-size:11.5px">Triple DiD: post&thinsp;&times;&thinsp;treated&thinsp;&times;&thinsp;urban</span></td>
+      <td>Urban interaction term not significant (p &gt; 0.24 all outcomes). Rural base effect is significant. Conflict affects women equally regardless of travel burden to facilities, ruling out a pure travel-time mechanism.</td>
+      <td><span class="tag tag-null">NULL</span></td>
+    </tr>
+    <tr>
+      <td><strong>Dose-response</strong><br><span style="color:var(--t2);font-size:11.5px">Continuous: post &times; log(LGA FH events)</span></td>
+      <td>Monotone negative gradient for all outcomes (p &lt; 0.004). A 10-event increase in LGA conflict &asymp; &minus;8.7&thinsp;pp skilled delivery, &minus;8.5&thinsp;pp ANC, &minus;7.1&thinsp;pp modern contraception, +8.0&thinsp;pp no attendant. Confirms exposure-response relationship.</td>
+      <td><span class="tag tag-sig">GRADIENT ***</span></td>
+    </tr>
+    <tr>
+      <td><strong>Wealth heterogeneity</strong><br><span style="color:var(--t2);font-size:11.5px">Rich (Q4–5) vs. poor (Q1–2)</span></td>
+      <td>Rich women show a larger skilled delivery decline (&minus;8.9&thinsp;pp***); poor women are less affected (difference = +3.2&thinsp;pp, p&thinsp;=&thinsp;0.047*). Inconsistent with income-loss; consistent with facility supply disruption that affects routine high-facility users most.</td>
+      <td><span class="tag tag-sig">SIG *</span></td>
+    </tr>
+    <tr>
+      <td><strong>Parity</strong><br><span style="color:var(--t2);font-size:11.5px">Primipara vs. multipara (skilled delivery)</span></td>
+      <td>First births show an additional &minus;4.8&thinsp;pp on top of the &minus;6.8&thinsp;pp multipara baseline (p&thinsp;=&thinsp;0.056†). Primipara are more dependent on formal facility births; disrupted access hits them hardest.</td>
+      <td><span class="tag tag-warn">MARGINAL †</span></td>
+    </tr>
+    <tr>
+      <td><strong>Within-mother sibling FE</strong><br><span style="color:var(--t2);font-size:11.5px">IMR &amp; U5 mortality, same-mother siblings</span></td>
+      <td>Infant mortality (p&thinsp;=&thinsp;0.67) and under-5 mortality (p&thinsp;=&thinsp;0.78) conditional on birth are unaffected. Conflict disrupts service access but does not raise mortality for births that do occur.</td>
+      <td><span class="tag tag-null">NULL</span></td>
+    </tr>
+    <tr>
+      <td><strong>Birth timing</strong><br><span style="color:var(--t2);font-size:11.5px">LGA-year births ~ lagged LGA conflict</span></td>
+      <td>Lagged conflict coefficient is negative (b&thinsp;=&thinsp;&minus;0.023) and imprecise (p&thinsp;=&thinsp;0.38). Direction is consistent with conflict suppressing conceptions; no evidence of fertility selection that would confound the main results.</td>
+      <td><span class="tag tag-null">NULL (ns)</span></td>
+    </tr>
+    <tr>
+      <td><strong>Placebo treatment</strong><br><span style="color:var(--t2);font-size:11.5px">Pre-2009 conflict as treatment</span></td>
+      <td>Replacing treatment with top-tercile 2005–2008 FH conflict yields null estimates for all outcomes. Pre-existing conflict levels do not drive the results.</td>
+      <td><span class="tag tag-pass">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>State &times; year FE</strong><br><span style="color:var(--t2);font-size:11.5px">Absorbs state-level time trends</span></td>
+      <td>DiD effects survive inclusion of state &times; survey-year fixed effects, ruling out state-level confounders such as differential healthcare expansion or state governance trends.</td>
+      <td><span class="tag tag-pass">PASS</span></td>
+    </tr>
+  </table>
+</div>
+
+<!-- ── Instrumental Variables ───────────────────────────────────────────────── -->
+<div class="section">
+  <p class="sec-head">Instrumental Variables</p>
+  <p style="font-family:var(--sans);font-size:13px;line-height:1.65;margin-bottom:14px">
+    Two geographic instruments—interacted with a post-2009 indicator—are constructed to address the potential endogeneity of LGA-level conflict intensity. <strong>Z1 (rainfall stability)</strong> uses the inverse coefficient of variation of annual CHIRPS rainfall (2005–2018): low-CV zones correspond to the Guinea savanna agro-ecological belt that is structurally prone to farmer–herder competition over stable productive land. <strong>Z2 (Boko Haram proximity)</strong> is the inverse Euclidean distance to Maiduguri, capturing the southward displacement of Fulani pastoralists from the BH conflict zone from ~2012 onward.
+  </p>
+  <div class="iv-grid">
+    <div class="iv-hd">Instrument</div>
+    <div class="iv-hd">1st-stage F</div>
+    <div class="iv-hd">&beta; (first stage)</div>
+    <div class="iv-hd">Assessment</div>
+    <div class="iv-c"><strong>Z1: Rainfall stability &times; post</strong><br><span style="color:var(--t2);font-size:11px">1 / CV<sub>annual</sub>, standardized; LGA-level</span></div>
+    <div class="iv-c" style="font-weight:700">9.2</div>
+    <div class="iv-c">+0.234 (p&thinsp;=&thinsp;0.003**)</div>
+    <div class="iv-c" style="color:var(--t2)">Borderline weak (Stock–Yogo 10% CV&thinsp;=&thinsp;16.4)</div>
+    <div class="iv-c last-row"><strong>Z2: BH proximity &times; post</strong><br><span style="color:var(--t2);font-size:11px">1 / distance to Maiduguri (km)</span></div>
+    <div class="iv-c last-row" style="font-weight:700;color:#c62828">1.8</div>
+    <div class="iv-c last-row" style="color:var(--t3)">&minus;0.009 (p&thinsp;=&thinsp;0.18)</div>
+    <div class="iv-c last-row" style="color:#c62828">Weak &mdash; discarded</div>
+  </div>
+  <p style="font-family:var(--sans);font-size:12.5px;color:var(--t2);margin-top:12px;line-height:1.65">
+    <strong>2SLS with Z1 only:</strong> skilled delivery b&thinsp;=&thinsp;+0.089* (sign reversal vs. OLS &minus;0.073); ANC b&thinsp;=&thinsp;+0.012 (ns); modern contraception b&thinsp;=&thinsp;+0.006 (ns). The sign reversal for skilled delivery and the borderline first stage (F&thinsp;=&thinsp;9.2, below Stock–Yogo 10% critical value of 16.4 for one instrument) indicate that the 2SLS estimates are unreliable here. Weak-instrument bias toward OLS cannot fully explain the reversal, suggesting the exclusion restriction may also be imperfect—stable-rainfall LGAs may differ on health supply dimensions not fully absorbed by LGA fixed effects. The OLS DiD—validated by parallel trends, placebo, and robustness tests above—remains the primary specification.
+  </p>
+</div>
+
+</div><!-- .page -->
 <div class="tt" id="tt"></div>
 
 <script>
-/* ── tooltip ─────────────────────────────────────────────────────────────── */
-const tt = document.getElementById('tt');
-function showTip(e, html){ tt.innerHTML=html; tt.classList.add('on'); moveTip(e); }
+/* ── tooltip ──────────────────────────────────────────────────────────────── */
+const tt=document.getElementById('tt');
+function showTip(e,html){tt.innerHTML=html;tt.classList.add('on');moveTip(e);}
 function moveTip(e){
-  const x=e.clientX+16, y=e.clientY-44;
+  const x=e.clientX+16,y=e.clientY-44;
   tt.style.left=Math.min(x,window.innerWidth-220)+'px';
   tt.style.top=Math.max(y,6)+'px';
 }
-function hideTip(){ tt.classList.remove('on'); }
-
-function sig(p){ return p<.001?'***': p<.01?'**': p<.05?'*': p<.1?'†': ''; }
-
-/* ── data ────────────────────────────────────────────────────────────────── */
-const DID_H = [
-  { label:'Modern contraception', b:-.05374, se:.01275, p:.0000 },
-  { label:'Any ANC visit',        b:-.05340, se:.02543, p:.0369 },
-  { label:'Skilled delivery',     b:-.06894, se:.02516, p:.0067 },
-];
-const DID_E = [
-  { label:'Years of education', b:-1.97269, se:.74038, p:.0083 },
-];
-
-const ES = {
-  sd: [
-    { yr:2003, b:-.02842, se:.03334 },
-    { yr:2008, b:0,       se:0,      base:true },
-    { yr:2013, b:-.06542, se:.02593 },
-    { yr:2018, b:-.08398, se:.03065 },
-  ],
-  mc: [
-    { yr:2003, b: .00475, se:.01600 },
-    { yr:2008, b:0,       se:0,      base:true },
-    { yr:2013, b:-.05018, se:.01297 },
-    { yr:2018, b:-.05734, se:.01461 },
-  ],
-  ed: [
-    { yr:2003, b:-.62986, se:.58707 },
-    { yr:2008, b:0,       se:0,      base:true },
-    { yr:2013, b:-2.17938, se:.72715 },
-    { yr:2018, b:-1.88675, se:.87688 },
-  ],
-};
-
-/* ── helpers ─────────────────────────────────────────────────────────────── */
-const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
-
-function addHover(el, rects) {
-  rects.forEach(r => {
-    r.addEventListener('mouseenter', e => showTip(e, r.dataset.tip));
-    r.addEventListener('mousemove', moveTip);
-    r.addEventListener('mouseleave', hideTip);
+function hideTip(){tt.classList.remove('on');}
+function sig(p){return p<.001?'***':p<.01?'**':p<.05?'*':p<.1?'†':'';}
+const cssv=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+function hover(rects){
+  rects.forEach(r=>{
+    r.addEventListener('mouseenter',e=>showTip(e,r.dataset.tip));
+    r.addEventListener('mousemove',moveTip);
+    r.addEventListener('mouseleave',hideTip);
   });
 }
 
-/* ── coefplot ────────────────────────────────────────────────────────────── */
-function coef(id, data, xlo, xhi, color, isPct, VW, VH) {
-  const el = document.getElementById(id);
-  const ML=165, MR=28, MT=18, MB=36;
-  const PW=VW-ML-MR, PH=VH-MT-MB;
-  const n=data.length, rowH=PH/n;
+/* ── coefplot ─────────────────────────────────────────────────────────────── */
+function coef(id,data,xlo,xhi,defColor,VW,VH){
+  const el=document.getElementById(id);
+  const ML=182,MR=34,MT=18,MB=38;
+  const PW=VW-ML-MR,PH=VH-MT-MB;
+  const n=data.length,rowH=PH/n;
   const xs=v=>ML+(v-xlo)/(xhi-xlo)*PW;
   const ym=i=>MT+(i+.5)*rowH;
-
-  const T1=css('--t1'), T2=css('--t2'), T3=css('--t3'), Z=css('--czero'), BG=css('--bg');
+  const T1=cssv('--t1'),T2=cssv('--t2'),T3=cssv('--t3'),Z=cssv('--czero'),BG=cssv('--bg');
   let s='';
-
-  // grid
-  const step = isPct ? .05 : 1;
-  for(let v=Math.ceil(xlo/step)*step; v<=xhi+1e-9; v=+(v+step).toFixed(6)){
+  const step=.05;
+  for(let v=Math.ceil(xlo/step)*step;v<=xhi+1e-9;v=+(v+step).toFixed(6)){
     const x=xs(v);
     s+=`<line x1="${x}" y1="${MT}" x2="${x}" y2="${MT+PH}" stroke="${Z}" stroke-width=".4" opacity=".45"/>`;
-    const lbl = isPct ? (v*100).toFixed(0)+'%' : v.toFixed(0);
-    s+=`<text x="${x}" y="${MT+PH+15}" text-anchor="middle" font-size="10" fill="${T3}" font-family="system-ui">${lbl}</text>`;
+    s+=`<text x="${x}" y="${MT+PH+15}" text-anchor="middle" font-size="10" fill="${T3}" font-family="system-ui">${(v*100).toFixed(0)}%</text>`;
   }
-  // axis label
-  const axLabel = isPct ? 'Percentage-point change' : 'Change in years';
-  s+=`<text x="${ML+PW/2}" y="${VH-3}" text-anchor="middle" font-size="10" fill="${T2}" font-family="system-ui">${axLabel}</text>`;
-
-  // zero line
+  s+=`<text x="${ML+PW/2}" y="${VH-3}" text-anchor="middle" font-size="10" fill="${T2}" font-family="system-ui">Percentage-point change</text>`;
   const x0=xs(0);
   s+=`<line x1="${x0}" y1="${MT-5}" x2="${x0}" y2="${MT+PH+5}" stroke="${Z}" stroke-width="1.2" stroke-dasharray="4,3"/>`;
-
   const rects=[];
   data.forEach((d,i)=>{
+    const color=d.color||defColor;
     const ci=1.96*d.se;
-    const xb=xs(d.b), xL=xs(Math.max(d.b-ci,xlo-.01)), xR=xs(Math.min(d.b+ci,xhi+.01));
-    const y=ym(i), st=sig(d.p);
-    const cap = isPct ? (d.b*100).toFixed(1)+'pp' : d.b.toFixed(2)+' yrs';
-
+    const xb=xs(d.b),xL=xs(Math.max(d.b-ci,xlo-.01)),xR=xs(Math.min(d.b+ci,xhi+.01));
+    const y=ym(i),st=sig(d.p);
     s+=`<line x1="${xL}" y1="${y}" x2="${xR}" y2="${y}" stroke="${color}" stroke-width="2.2" stroke-linecap="round"/>`;
     s+=`<line x1="${xL}" y1="${y-4.5}" x2="${xL}" y2="${y+4.5}" stroke="${color}" stroke-width="1.5"/>`;
     s+=`<line x1="${xR}" y1="${y-4.5}" x2="${xR}" y2="${y+4.5}" stroke="${color}" stroke-width="1.5"/>`;
     s+=`<circle cx="${xb}" cy="${y}" r="5.5" fill="${color}" stroke="${BG}" stroke-width="2"/>`;
     s+=`<text x="${ML-10}" y="${y+4}" text-anchor="end" font-size="12" fill="${T1}" font-family="system-ui">${d.label}</text>`;
     if(st) s+=`<text x="${xR+5}" y="${y+4.5}" font-size="11" fill="${color}" font-family="system-ui">${st}</text>`;
-    s+=`<text x="${xb}" y="${y-10}" text-anchor="middle" font-size="9.5" fill="${color}" font-weight="600" font-family="system-ui">${cap}</text>`;
-
-    const ttB = isPct?(d.b*100).toFixed(2)+'pp':d.b.toFixed(3)+' yrs';
-    const ttC = isPct?`[${((d.b-ci)*100).toFixed(1)}, ${((d.b+ci)*100).toFixed(1)}] pp`
-                     :`[${(d.b-ci).toFixed(2)}, ${(d.b+ci).toFixed(2)}] yrs`;
-    const rect=document.createElementNS('http://www.w3.org/2000/svg','rect');
-    rect.setAttribute('x','0'); rect.setAttribute('y',y-rowH/2);
-    rect.setAttribute('width',VW); rect.setAttribute('height',rowH);
-    rect.setAttribute('fill','transparent');
-    rect.dataset.tip=`<strong>${d.label}</strong><br><span>β =</span> ${ttB}<br><span>95% CI:</span> ${ttC}<br><span>p =</span> ${d.p.toFixed(4)}`;
-    rects.push(rect);
+    s+=`<text x="${xb}" y="${y-10}" text-anchor="middle" font-size="9.5" fill="${color}" font-weight="600" font-family="system-ui">${(d.b*100).toFixed(1)}pp</text>`;
+    const ttC=`[${((d.b-ci)*100).toFixed(1)}, ${((d.b+ci)*100).toFixed(1)}] pp`;
+    const r=document.createElementNS('http://www.w3.org/2000/svg','rect');
+    r.setAttribute('x','0');r.setAttribute('y',y-rowH/2);
+    r.setAttribute('width',VW);r.setAttribute('height',rowH);
+    r.setAttribute('fill','transparent');
+    r.dataset.tip=`<strong>${d.label}</strong><br><span>β =</span> ${(d.b*100).toFixed(2)}pp<br><span>95% CI:</span> ${ttC}<br><span>p =</span> ${d.p.toFixed(4)}`;
+    rects.push(r);
   });
-
-  el.innerHTML=s;
-  rects.forEach(r=>el.appendChild(r));
-  addHover(el, rects);
+  el.innerHTML=s; rects.forEach(r=>el.appendChild(r)); hover(rects);
 }
 
 /* ── event study ──────────────────────────────────────────────────────────── */
-function esPlot(id, data, ylo, yhi, color, isPct, VW, VH) {
-  const el = document.getElementById(id);
-  const ML=38, MR=12, MT=22, MB=40;
-  const PW=VW-ML-MR, PH=VH-MT-MB;
+function esPlot(id,data,ylo,yhi,color,VW,VH){
+  const el=document.getElementById(id);
+  const ML=36,MR=12,MT=22,MB=40;
+  const PW=VW-ML-MR,PH=VH-MT-MB;
   const YEARS=[2003,2008,2013,2018];
   const xs=yr=>ML+(YEARS.indexOf(yr)/(YEARS.length-1))*PW;
   const ys=v=>MT+(yhi-v)/(yhi-ylo)*PH;
-
-  const T2=css('--t2'), T3=css('--t3'), Z=css('--czero'), BG=css('--bg');
+  const T2=cssv('--t2'),T3=cssv('--t3'),Z=cssv('--czero'),BG=cssv('--bg');
   let s='';
-
-  // post-treatment shade (2009–2018)
-  const x08=xs(2008), x13=xs(2013), x18=xs(2018);
+  const x08=xs(2008),x13=xs(2013),x18=xs(2018);
   const onsetX=x08+(x13-x08)/2;
   s+=`<rect x="${onsetX}" y="${MT}" width="${x18-onsetX}" height="${PH}" fill="${color}" opacity=".05"/>`;
-
-  // onset line
   s+=`<line x1="${onsetX}" y1="${MT}" x2="${onsetX}" y2="${MT+PH}" stroke="${Z}" stroke-width="1" stroke-dasharray="5,3" opacity=".75"/>`;
-
-  // "Pre" / "Post" labels
-  s+=`<text x="${(ML+onsetX)/2}" y="${MT+12}" text-anchor="middle" font-size="9" fill="${T3}" font-family="system-ui" opacity=".85">Pre</text>`;
-  s+=`<text x="${(onsetX+ML+PW)/2}" y="${MT+12}" text-anchor="middle" font-size="9" fill="${color}" font-family="system-ui" opacity=".85">Post</text>`;
-
-  // zero line
+  s+=`<text x="${(ML+onsetX)/2}" y="${MT+12}" text-anchor="middle" font-size="9" fill="${T3}" font-family="system-ui">Pre</text>`;
+  s+=`<text x="${(onsetX+ML+PW)/2}" y="${MT+12}" text-anchor="middle" font-size="9" fill="${color}" font-family="system-ui">Post</text>`;
   const y0=ys(0);
   s+=`<line x1="${ML}" y1="${y0}" x2="${ML+PW}" y2="${y0}" stroke="${Z}" stroke-width=".8" stroke-dasharray="4,2"/>`;
-
-  // y ticks
-  const step = isPct ? .05 : 1;
-  for(let v=Math.ceil(ylo/step)*step; v<=yhi+1e-9; v=+(v+step).toFixed(6)){
+  const step=.05;
+  for(let v=Math.ceil(ylo/step)*step;v<=yhi+1e-9;v=+(v+step).toFixed(6)){
     const yy=ys(v);
     if(yy<MT-2||yy>MT+PH+2) continue;
     s+=`<line x1="${ML}" y1="${yy}" x2="${ML+PW}" y2="${yy}" stroke="${Z}" stroke-width=".3" opacity=".45"/>`;
-    const lbl = isPct ? (v*100).toFixed(0)+'%' : v.toFixed(0);
-    s+=`<text x="${ML-4}" y="${yy+3.5}" text-anchor="end" font-size="9" fill="${T3}" font-family="system-ui">${lbl}</text>`;
+    s+=`<text x="${ML-4}" y="${yy+3.5}" text-anchor="end" font-size="9" fill="${T3}" font-family="system-ui">${(v*100).toFixed(0)}%</text>`;
   }
-
-  // x labels
   YEARS.forEach(yr=>{
     s+=`<text x="${xs(yr)}" y="${MT+PH+16}" text-anchor="middle" font-size="9.5" fill="${T2}" font-family="system-ui">${yr}</text>`;
   });
   s+=`<text x="${ML+PW/2}" y="${VH-4}" text-anchor="middle" font-size="9" fill="${T3}" font-family="system-ui">Survey year</text>`;
-
-  // connecting line
   const pts=data.map(d=>`${xs(d.yr)},${ys(d.b)}`).join(' ');
   s+=`<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.8" stroke-linejoin="round" opacity=".6"/>`;
-
-  // marks
   data.forEach(d=>{
-    const x=xs(d.yr), y=ys(d.b);
+    const x=xs(d.yr),y=ys(d.b);
     if(d.base){
       s+=`<rect x="${x-5.5}" y="${y-5.5}" width="11" height="11" fill="${BG}" stroke="${color}" stroke-width="2" transform="rotate(45,${x},${y})"/>`;
     } else {
-      const ci=1.96*d.se;
-      const yL=ys(d.b-ci), yR=ys(d.b+ci);
+      const ci=1.96*d.se,yL=ys(d.b-ci),yR=ys(d.b+ci);
       s+=`<line x1="${x}" y1="${Math.min(yL,yR)}" x2="${x}" y2="${Math.max(yL,yR)}" stroke="${color}" stroke-width="1.8"/>`;
       s+=`<line x1="${x-3.5}" y1="${yL}" x2="${x+3.5}" y2="${yL}" stroke="${color}" stroke-width="1.4"/>`;
       s+=`<line x1="${x-3.5}" y1="${yR}" x2="${x+3.5}" y2="${yR}" stroke="${color}" stroke-width="1.4"/>`;
       s+=`<circle cx="${x}" cy="${y}" r="4.5" fill="${color}" stroke="${BG}" stroke-width="2"/>`;
     }
   });
-
   el.innerHTML=s;
-
-  // hover rects added as DOM elements
   const rects=[];
   data.forEach(d=>{
-    const x=xs(d.yr), ci=d.base?0:1.96*d.se;
-    const ttB=d.base?'0 (base year)':(isPct?(d.b*100).toFixed(2)+'pp':d.b.toFixed(3)+' yrs');
-    const ttC=d.base?'n/a':(isPct?`[${((d.b-ci)*100).toFixed(1)}, ${((d.b+ci)*100).toFixed(1)}] pp`
-                                  :`[${(d.b-ci).toFixed(2)}, ${(d.b+ci).toFixed(2)}] yrs`);
+    const x=xs(d.yr),ci=d.base?0:1.96*d.se;
+    const ttB=d.base?'0 (base year)':`${(d.b*100).toFixed(2)}pp`;
+    const ttC=d.base?'n/a':`[${((d.b-ci)*100).toFixed(1)}, ${((d.b+ci)*100).toFixed(1)}] pp`;
     const r=document.createElementNS('http://www.w3.org/2000/svg','rect');
-    r.setAttribute('x', x-18); r.setAttribute('y', MT);
-    r.setAttribute('width','36'); r.setAttribute('height', PH);
+    r.setAttribute('x',x-20);r.setAttribute('y',MT);
+    r.setAttribute('width','40');r.setAttribute('height',PH);
     r.setAttribute('fill','transparent');
     r.dataset.tip=`<strong>${d.yr}</strong><br><span>β =</span> ${ttB}<br><span>95% CI:</span> ${ttC}`;
     rects.push(r);
   });
-  rects.forEach(r=>el.appendChild(r));
-  addHover(el, rects);
+  rects.forEach(r=>el.appendChild(r)); hover(rects);
 }
 
-/* ── render ──────────────────────────────────────────────────────────────── */
-const CH=css('--ch'), CE=css('--ce');
-coef('cv-h', DID_H, -.155, .075, CH, true,  460, 178);
-coef('cv-e', DID_E, -3.6,  0.6,  CE, false, 190,  95);
-esPlot('es-sd', ES.sd, -.22, .14, CH, true,  220, 200);
-esPlot('es-mc', ES.mc, -.13, .09, CH, true,  220, 200);
-esPlot('es-ed', ES.ed, -4.5, 2.0, CE, false, 220, 200);
+/* ── forest / heterogeneity plot ──────────────────────────────────────────── */
+function hetPlot(id,rows,xlo,xhi,VW){
+  const el=document.getElementById(id);
+  const ML=188,MR=42,MT=14,MB=38;
+  const PW=VW-ML-MR;
+  const xs=v=>ML+(v-xlo)/(xhi-xlo)*PW;
+  const ROW_H=26,HEAD_H=18,GAP_H=8;
+  let totalH=MT;
+  const positions=[];
+  rows.forEach(r=>{
+    if(r.type==='data'){positions.push({...r,y:totalH+ROW_H/2});totalH+=ROW_H;}
+    else if(r.type==='header'){positions.push({...r,y:totalH+HEAD_H/2+2});totalH+=HEAD_H;}
+    else{positions.push({...r,y:totalH+GAP_H/2});totalH+=GAP_H;}
+  });
+  totalH+=MB;
+  el.setAttribute('viewBox',`0 0 ${VW} ${totalH}`);
+  const T1=cssv('--t1'),T2=cssv('--t2'),T3=cssv('--t3'),Z=cssv('--czero'),BG=cssv('--bg');
+  const CH=cssv('--ch');
+  let s='';
+  /* grid */
+  const step=.05;
+  for(let v=Math.ceil(xlo/step)*step;v<=xhi+1e-9;v=+(v+step).toFixed(6)){
+    const x=xs(v);
+    s+=`<line x1="${x}" y1="${MT}" x2="${x}" y2="${totalH-MB}" stroke="${Z}" stroke-width=".4" opacity=".45"/>`;
+    s+=`<text x="${x}" y="${totalH-MB+15}" text-anchor="middle" font-size="10" fill="${T3}" font-family="system-ui">${(v*100).toFixed(0)}%</text>`;
+  }
+  s+=`<text x="${ML+PW/2}" y="${totalH-3}" text-anchor="middle" font-size="10" fill="${T2}" font-family="system-ui">Percentage-point change</text>`;
+  /* zero + overall reference */
+  const x0=xs(0);
+  s+=`<line x1="${x0}" y1="${MT-4}" x2="${x0}" y2="${totalH-MB+4}" stroke="${Z}" stroke-width="1.2" stroke-dasharray="4,3"/>`;
+  const xOvr=xs(-0.07296);
+  s+=`<line x1="${xOvr}" y1="${MT-4}" x2="${xOvr}" y2="${totalH-MB+4}" stroke="${T3}" stroke-width="1" stroke-dasharray="3,3" opacity=".55"/>`;
+  const rects=[];
+  positions.forEach(d=>{
+    if(d.type==='header'){
+      const sepY=d.y-HEAD_H/2+1;
+      s+=`<line x1="${ML-8}" y1="${sepY}" x2="${ML+PW}" y2="${sepY}" stroke="${Z}" stroke-width=".5" opacity=".7"/>`;
+      s+=`<text x="${ML-10}" y="${d.y+4}" text-anchor="end" font-size="10" fill="${T2}" font-weight="700" font-family="system-ui">${d.label.toUpperCase()}</text>`;
+    } else if(d.type==='data'){
+      const ci=1.96*d.se;
+      const xb=xs(d.b),xL=xs(Math.max(d.b-ci,xlo-.01)),xR=xs(Math.min(d.b+ci,xhi+.01));
+      const y=d.y,st=sig(d.p);
+      const lw=d.group==='overall'?2.4:1.8,rs=d.group==='overall'?5.5:4;
+      const fw=d.group==='overall'?'700':'400',fs=d.group==='overall'?'12':'11.5';
+      s+=`<line x1="${xL}" y1="${y}" x2="${xR}" y2="${y}" stroke="${CH}" stroke-width="${lw}" stroke-linecap="round"/>`;
+      s+=`<line x1="${xL}" y1="${y-4}" x2="${xL}" y2="${y+4}" stroke="${CH}" stroke-width="${lw-.6}"/>`;
+      s+=`<line x1="${xR}" y1="${y-4}" x2="${xR}" y2="${y+4}" stroke="${CH}" stroke-width="${lw-.6}"/>`;
+      s+=`<circle cx="${xb}" cy="${y}" r="${rs}" fill="${CH}" stroke="${BG}" stroke-width="1.8"/>`;
+      s+=`<text x="${ML-10}" y="${y+4}" text-anchor="end" font-size="${fs}" fill="${T1}" font-weight="${fw}" font-family="system-ui">${d.label}</text>`;
+      if(st) s+=`<text x="${xR+5}" y="${y+4.5}" font-size="10.5" fill="${CH}" font-family="system-ui">${st}</text>`;
+      const ttB=`${(d.b*100).toFixed(2)}pp`,ttC=`[${((d.b-ci)*100).toFixed(1)}, ${((d.b+ci)*100).toFixed(1)}] pp`;
+      const rec=document.createElementNS('http://www.w3.org/2000/svg','rect');
+      rec.setAttribute('x','0');rec.setAttribute('y',y-ROW_H/2);
+      rec.setAttribute('width',VW);rec.setAttribute('height',ROW_H);
+      rec.setAttribute('fill','transparent');
+      rec.dataset.tip=`<strong>${d.label}</strong><br><span>β =</span> ${ttB}<br><span>95% CI:</span> ${ttC}<br><span>p ≈</span> ${d.p.toFixed(3)}`;
+      rects.push(rec);
+    }
+  });
+  el.innerHTML=s; rects.forEach(r=>el.appendChild(r)); hover(rects);
+}
+
+/* ── data ─────────────────────────────────────────────────────────────────── */
+const CH=cssv('--ch'), CE=cssv('--ce');
+
+const DID_H=[
+  {label:'Modern contraception', b:-.05301, se:.01278, p:.0001},
+  {label:'Any ANC visit',        b:-.05566, se:.02677, p:.0390},
+  {label:'Skilled delivery',     b:-.07296, se:.02622, p:.0060},
+  {label:'No birth attendant',   b:+.05339, se:.01774, p:.0030, color:CE},
+];
+
+const ES={
+  sd:[{yr:2003,b:-.02842,se:.03334},{yr:2008,b:0,se:0,base:true},{yr:2013,b:-.06542,se:.02593},{yr:2018,b:-.08398,se:.03065}],
+  mc:[{yr:2003,b:+.00475,se:.01600},{yr:2008,b:0,se:0,base:true},{yr:2013,b:-.05018,se:.01297},{yr:2018,b:-.05734,se:.01461}],
+  na:[{yr:2003,b:+.00020,se:.02656},{yr:2008,b:0,se:0,base:true},{yr:2013,b:+.07760,se:.01538},{yr:2018,b:+.01910,se:.02260}],
+};
+
+/* HET data: wealth/location/parity subgroup effects on skilled delivery.
+   "Net" effects (poor, urban, primipara) = baseline + interaction; SEs by delta method. */
+const HET=[
+  {label:'Overall',                b:-.07296, se:.02622, p:.006,  type:'data', group:'overall'},
+  {type:'gap'},
+  {label:'By Wealth',              type:'header'},
+  {label:'Rich (Q4–Q5)',           b:-.0887,  se:.0266,  p:.001,  type:'data', group:'wealth'},
+  {label:'Poor (Q1–Q2)',           b:-.0566,  se:.0311,  p:.073,  type:'data', group:'wealth'},
+  {type:'gap'},
+  {label:'By Location',            type:'header'},
+  {label:'Rural',                  b:-.0705,  se:.0267,  p:.009,  type:'data', group:'location'},
+  {label:'Urban',                  b:-.0604,  se:.0379,  p:.113,  type:'data', group:'location'},
+  {type:'gap'},
+  {label:'By Parity',              type:'header'},
+  {label:'Multipara (parity ≥ 2)', b:-.0680,  se:.0250,  p:.007,  type:'data', group:'parity'},
+  {label:'Primipara (first birth)',b:-.1157,  se:.0352,  p:.001,  type:'data', group:'parity'},
+];
+
+/* ── render ────────────────────────────────────────────────────────────────── */
+coef('cv-h', DID_H, -.165, .125, CH, 580, 224);
+esPlot('es-sd', ES.sd, -.22,  .14, CH, 220, 200);
+esPlot('es-mc', ES.mc, -.13,  .09, CH, 220, 200);
+esPlot('es-na', ES.na, -.10,  .16, CE, 220, 200);
+hetPlot('het', HET, -.22, .04, 580);
 </script>
 </body>
 </html>
