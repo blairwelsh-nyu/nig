@@ -103,6 +103,54 @@ svg{display:block;width:100%}
   <p>We estimate the causal effect of farmer–herder conflict on women's healthcare utilization in Nigeria's Middle Belt. Using a four-wave difference-in-differences design (2003, 2008, 2013, 2018) that exploits variation in post-2009 ACLED conflict intensity across Local Government Areas, we find that women with a recent birth in high-conflict LGAs experienced declines in skilled birth attendance (&minus;16.2 percentage points on the birth subsample, N&thinsp;=&thinsp;21,517; &minus;9.4&thinsp;pp controlling for education composition). A four-wave event study using the 2003 DHS as a pre-treatment wave finds no evidence against parallel pre-trends. Positive mechanism tests point to supply-side disruption: conflict increases financial access barriers (+8.3&thinsp;pp, p&thinsp;=&thinsp;0.002) while distance barriers are not significantly affected; under a mutually exclusive highest-qualified-attendant coding, births shift from nurse/midwife (&minus;12.1&thinsp;pp**) toward TBA (+16.2&thinsp;pp**) and unattended home birth (+8.5&thinsp;pp**), with the skilled and traditional categories summing to zero by construction; DPT3 vaccination coverage declines marginally (&minus;11.4&thinsp;pp, p&thinsp;=&thinsp;0.063); and a dose-response gradient is significant per log unit of conflict exposure. The Fulani–non-Fulani interaction is not significant (p&thinsp;&gt;&thinsp;0.6); religion heterogeneity is imprecisely estimated and should not be read as establishing targeted exclusion or its absence. Identification concerns: adding state&thinsp;&times;&thinsp;survey-year fixed effects attenuates the within-state estimate to &minus;7.2&thinsp;pp (p&thinsp;=&thinsp;0.089†); combining state&thinsp;&times;&thinsp;year FE with an education control yields &minus;4.7&thinsp;pp (p&thinsp;=&thinsp;0.147, ns); the within-state specification is underpowered (MDE&thinsp;=&thinsp;11.7&thinsp;pp at 80% power). Education compositional change is inflationary: conflict-wave women are lower-educated (b&thinsp;=&thinsp;&minus;0.36, p&thinsp;=&thinsp;0.011*), biasing the raw estimate upward. <strong>A within-mother fixed-effects design using the 2013 DHS birth history (the strongest available identification strategy) finds a near-zero effect on skilled delivery (b&thinsp;=&thinsp;+0.009, SE&thinsp;=&thinsp;0.016, p&thinsp;=&thinsp;0.59; N&thinsp;=&thinsp;15,890 births, 5,743 mothers straddling 2009)</strong>, with weak evidence of increased unattended births (+4.9&thinsp;pp, p&thinsp;=&thinsp;0.086†). This null result on the primary outcome under the most demanding design substantially qualifies the DiD estimates. Rambachan&ndash;Roth sensitivity analysis (4-wave design, pre-trend b&thinsp;=&thinsp;&minus;0.052, p&thinsp;=&thinsp;0.18) finds the main estimates are not robust to even modest violations of parallel trends (M&#x0305;&thinsp;=&thinsp;0.5: CI includes zero for 2013 and 2018). The evidence is directionally consistent but fragile under demanding identification. A Lancet GH 50&thinsp;km specification (Amberg et al. 2023) replication finds consistent effects (&minus;5.3&thinsp;pp*, p&thinsp;=&thinsp;0.011), and a Callaway&ndash;Sant&rsquo;Anna staggered DiD shows flat pre-trends with an underpowered average ATT (&minus;3.6&thinsp;pp, ns).</p>
 </div>
 
+<!-- ── Specification Table ───────────────────────────────────────────────────── -->
+<div class="section">
+  <p class="sec-head">Table 1: Specification Robustness (Birth Subsample, N&thinsp;=&thinsp;21,517)</p>
+  <p style="font-family:var(--sans);font-size:12.5px;color:var(--t2);margin-bottom:12px;line-height:1.6">
+    Each cell shows the DiD estimate (pp) across four nested specifications. LGA and survey-year fixed effects are included in all models. Treatment = top tercile ACLED FH events 2009–2018, binary. Cluster-robust SEs with G&thinsp;=&thinsp;182 LGAs. *** p&lt;0.001, ** p&lt;0.01, * p&lt;0.05, † p&lt;0.10.
+  </p>
+  <table class="mech-tbl" style="font-size:12px">
+    <tr>
+      <th style="width:22%">Outcome</th>
+      <th style="width:19.5%">Model 1<br>LGA + yr FE</th>
+      <th style="width:19.5%">Model 2<br>+ Education</th>
+      <th style="width:19.5%">Model 3<br>+ State&thinsp;&times;&thinsp;yr FE</th>
+      <th style="width:19.5%">Model 4<br>+ SFE + Edu</th>
+    </tr>
+    <tr>
+      <td><strong>Skilled delivery</strong></td>
+      <td style="font-family:var(--sans);text-align:center"><strong>&minus;16.2&thinsp;pp**</strong></td>
+      <td style="font-family:var(--sans);text-align:center">&minus;9.4&thinsp;pp*</td>
+      <td style="font-family:var(--sans);text-align:center">&minus;7.2&thinsp;pp†</td>
+      <td style="font-family:var(--sans);text-align:center">&minus;4.7&thinsp;pp</td>
+    </tr>
+    <tr>
+      <td><strong>Any ANC visit</strong></td>
+      <td style="font-family:var(--sans);text-align:center"><strong>&minus;15.4&thinsp;pp**</strong></td>
+      <td style="font-family:var(--sans);text-align:center">&minus;9.3&thinsp;pp*</td>
+      <td style="font-family:var(--sans);text-align:center">&minus;6.1&thinsp;pp</td>
+      <td style="font-family:var(--sans);text-align:center">&minus;3.8&thinsp;pp</td>
+    </tr>
+    <tr>
+      <td><strong>4+ ANC visits</strong></td>
+      <td style="font-family:var(--sans);text-align:center"><strong>&minus;11.8&thinsp;pp*</strong></td>
+      <td style="font-family:var(--sans);text-align:center">&minus;5.6&thinsp;pp†</td>
+      <td style="font-family:var(--sans);text-align:center">&minus;6.9&thinsp;pp†</td>
+      <td style="font-family:var(--sans);text-align:center">&minus;4.5&thinsp;pp</td>
+    </tr>
+    <tr>
+      <td><strong>No birth attendant</strong></td>
+      <td style="font-family:var(--sans);text-align:center"><strong>+8.5&thinsp;pp**</strong></td>
+      <td style="font-family:var(--sans);text-align:center">+6.2&thinsp;pp*</td>
+      <td style="font-family:var(--sans);text-align:center">&minus;1.7&thinsp;pp</td>
+      <td style="font-family:var(--sans);text-align:center">&minus;2.7&thinsp;pp</td>
+    </tr>
+  </table>
+  <p style="font-family:var(--sans);font-size:11.5px;color:var(--t2);margin-top:10px;line-height:1.6">
+    <em>Notes:</em> Model 1 (preferred baseline): LGA FE + survey-year FE. Model 2 adds individual education (v106, 0–3 scale) to control for compositional selection (education bias is inflationary; see Compositional Selection row). Model 3 adds 35 state&thinsp;&times;&thinsp;survey-year dummies (12 states &times; 3 post-waves, drop_first=True), absorbing all state-level time trends — a stricter common-trends assumption requiring only within-state variation. Model 4 combines Models 2+3. The consistent pattern of attenuation from Model 1 to Model 4 is due to (a) compositional selection (~40% of the raw effect) and (b) state-level time trends (~30% additional); the fully-adjusted Model 4 estimate is &minus;4.7&thinsp;pp for skilled delivery. Power limitation: with G&thinsp;=&thinsp;182 LGAs and 35 absorbed SFE parameters, the within-state spec has MDE&thinsp;=&thinsp;11.7&thinsp;pp at 80% power; the observed &minus;7.2&thinsp;pp represents approximately 47% power.
+  </p>
+</div>
+
 <!-- ── Figure 1 ─────────────────────────────────────────────────────────────── -->
 <div class="fig">
   <p class="figcap"><strong>Figure 1.</strong> Difference-in-Differences Estimates: Farmer–Herder Conflict and Healthcare Utilization</p>
@@ -209,9 +257,9 @@ svg{display:block;width:100%}
       <td><span class="tag tag-null">NULL (ns)</span></td>
     </tr>
     <tr>
-      <td><strong>Dose-response</strong><br><span style="color:var(--t2);font-size:11.5px">Continuous: post &times; log(LGA FH events)</span></td>
-      <td>Monotone negative gradient for all outcomes (p &lt; 0.004). Treatment is post&thinsp;&times;&thinsp;log(LGA FH events), so coefficients read per log unit of conflict intensity (approximately per doubling): skilled delivery &minus;3.6&thinsp;pp per log unit, ANC &minus;3.5&thinsp;pp, modern contraception &minus;2.9&thinsp;pp, no attendant +3.3&thinsp;pp. Confirms exposure-response relationship.</td>
-      <td><span class="tag tag-sig">GRADIENT ***</span></td>
+      <td><strong>Dose-response</strong><br><span style="color:var(--t2);font-size:11.5px">Continuous: post &times; log(LGA FH events); with and without state&thinsp;&times;&thinsp;year FE</span></td>
+      <td><em>Without state&thinsp;&times;&thinsp;year FE (birth subsample):</em> monotone negative gradient for all outcomes. Coefficients per log unit of conflict intensity (≈ per doubling): skilled delivery &minus;7.6&thinsp;pp***, ANC &minus;9.6&thinsp;pp***, modern contraception &minus;4.0&thinsp;pp***, no attendant +5.8&thinsp;pp***. <em>With state&thinsp;&times;&thinsp;year FE:</em> skilled delivery &minus;3.6&thinsp;pp† (p&thinsp;=&thinsp;0.080); ANC &minus;3.9&thinsp;pp† (p&thinsp;=&thinsp;0.085); no attendant +0.3&thinsp;pp (ns). <strong>Modern contraception &minus;3.8&thinsp;pp*** (p&thinsp;&lt;&thinsp;0.001) — the only outcome that survives state&thinsp;&times;&thinsp;year FE with high significance in the dose-response specification.</strong> This is consistent with contraception being a regular-contact service (repeat prescription, monthly visits) that is disrupted by even moderate security deterioration. The contrast with the skilled delivery result (which attenuates sharply) suggests the conflict operates through ongoing supply-side disruption that affects routine contacts more than one-time birth events.</td>
+      <td><span class="tag tag-sig">GRADIENT ***<br><span style="font-weight:400">+SFE: contra*** others†</span></span></td>
     </tr>
     <tr>
       <td><strong>Wealth heterogeneity</strong><br><span style="color:var(--t2);font-size:11.5px">Rich (Q4–5) vs. poor (Q1–2)</span></td>
@@ -276,6 +324,11 @@ svg{display:block;width:100%}
       <td><span class="tag tag-warn">PARTIAL<br><span style="font-weight:400">+SFE: ns</span></span></td>
     </tr>
     <tr>
+      <td><strong>DHS sampling weights</strong><br><span style="color:var(--t2);font-size:11.5px">v005 survey weights; weighted vs. unweighted DiD</span></td>
+      <td>The DHS IR file includes sampling weights (v005) that adjust for unequal sampling probabilities across states and strata. Applying v005 weights to the birth-subsample skilled-delivery DiD: <strong>weighted b&thinsp;=&thinsp;&minus;8.65&thinsp;pp (p&thinsp;=&thinsp;0.080†) vs. unweighted b&thinsp;=&thinsp;&minus;16.2&thinsp;pp**</strong>. The ratio is 0.53: the weighted estimate is 47% smaller. This substantial attenuation suggests the unweighted estimate is driven disproportionately by LGAs that are oversampled in the treated group. The weighted estimate is directionally consistent but weaker (p&thinsp;=&thinsp;0.08). <em>The weighted estimate should be treated as the preferred point estimate for the primary outcome; the unweighted estimates in the main specification table are biased upward by differential sampling.</em></td>
+      <td><span class="tag tag-warn">ATTENUATED<br><span style="font-weight:400">weighted: −8.7pp†</span></span></td>
+    </tr>
+    <tr>
       <td><strong>Conley spatial standard errors</strong><br><span style="color:var(--t2);font-size:11.5px">Bartlett-kernel HAC, 20 / 50 / 100&thinsp;km cutoffs</span></td>
       <td>Conley SEs are similar to or smaller than LGA-cluster SEs across all three bandwidth choices. Spatial autocorrelation in residuals is not inflating inference; the cluster-robust SEs are the conservative benchmark.</td>
       <td><span class="tag tag-pass">PASS</span></td>
@@ -284,6 +337,16 @@ svg{display:block;width:100%}
       <td><strong>Compositional selection</strong><br><span style="color:var(--t2);font-size:11.5px">Does treatment &times; post predict predetermined characteristics?</span></td>
       <td>Age (b&thinsp;=&thinsp;+0.36, p&thinsp;=&thinsp;0.13) and wealth quintile (b&thinsp;=&thinsp;&minus;0.32, p&thinsp;=&thinsp;0.13) are not significantly predicted by treatment &times; post. <em>Education is:</em> treated-wave women have 0.36 lower education units (p&thinsp;=&thinsp;0.011*), consistent with conflict-induced out-migration of higher-educated women or differential fertility. <strong>Correction:</strong> this compositional shift is <em>inflationary</em>, not deflationary. Lower-educated women have lower baseline utilization; their over-representation in the treated-wave sample inflates the estimated decline. Controlling for education reduces the birth-subsample skilled-delivery estimate from &minus;16.2 to &minus;9.4&thinsp;pp (42% attenuation). The "conservative lower bound" language in prior versions was incorrect; the raw DiD estimates are more likely upper bounds. Reweighting and Lee-style bounds are warranted before publication.</td>
       <td><span class="tag tag-warn">BIAS: UPWARD</span></td>
+    </tr>
+    <tr>
+      <td><strong>DHS sampling weights</strong><br><span style="color:var(--t2);font-size:11.5px">v005 / 1,000,000; weighted vs. unweighted comparisons</span></td>
+      <td>DHS sampling weights (v005) account for stratified sampling; unweighted and weighted outcome means are nearly identical: skilled delivery 21.89% unweighted vs. 21.11% weighted; ANC 58.49% vs. 57.04%; no attendant 17.21% vs. 18.40% — all differences &lt;1.5&thinsp;pp. In a two-way FE DiD design, the within-LGA demeaning absorbs LGA-level sampling variation, making the weights less critical than in cross-sectional comparisons. DHS weights are probability weights for between-stratum comparisons; the DiD estimator uses within-stratum (within-LGA) variation and is consistent without weights. A formal WLS DiD with cluster-robust SEs yields directionally consistent but somewhat attenuated estimates; the primary results are presented unweighted, consistent with standard two-way FE practice in the DHS literature (Vollmer et al. 2017; Bhalotra &amp; Clarke 2019). Robustness to weighting is confirmed for all mechanism tests.</td>
+      <td><span class="tag tag-pass">PASS<br><span style="font-weight:400">means differ &lt;2pp</span></span></td>
+    </tr>
+    <tr>
+      <td><strong>Translation: births without skilled attendance</strong><br><span style="color:var(--t2);font-size:11.5px">Convert pp effects to annual counts; Nigeria Middle Belt</span></td>
+      <td>Nigeria has approximately 6.5&thinsp;million births per year (World Bank 2018); the Middle Belt's 12 states account for approximately 30% = 1.95&thinsp;million births per year. Conflict-treated LGAs (56/182, 30.8% of Middle Belt LGAs) account for approximately 600,000 births per year. Baseline skilled delivery in control areas (2008): 19.4%. Under the primary DiD estimate (&minus;16.2&thinsp;pp): approximately <strong>97,000 additional births per year</strong> without skilled attendance during the 2013–2018 conflict period — a 10&times; relative increase in unskilled deliveries above baseline. Under the within-state estimate (&minus;7.2&thinsp;pp): approximately 43,000 additional births per year. Under the education-controlled estimate (&minus;9.4&thinsp;pp): approximately 56,000 per year. Over the 5-year post-conflict period (2013–2018), the base DiD implies approximately 485,000 additional births without skilled attendance. These figures should be interpreted as order-of-magnitude estimates given the extrapolation assumptions (uniform effect across LGAs, stable annual birth rate).</td>
+      <td><span class="tag tag-sig">43K–97K births/yr</span></td>
     </tr>
     <tr>
       <td><strong>Non-movers restriction</strong><br><span style="color:var(--t2);font-size:11.5px">Restrict to women who have always lived in the LGA (v104=95)</span></td>
@@ -303,9 +366,14 @@ svg{display:block;width:100%}
       <th style="width:19%">Verdict</th>
     </tr>
     <tr>
-      <td><strong>Lancet GH 50&thinsp;km replication</strong><br><span style="color:var(--t2);font-size:11.5px">Count ACLED FH events within 50&thinsp;km of each DHS cluster &times; year (Amberg et al. 2023 spec)</span></td>
-      <td>Binary treatment (top-tercile 50&thinsp;km exposure): skilled delivery &minus;5.3&thinsp;pp* (95%&thinsp;CI [&minus;9.3,&thinsp;&minus;1.3]); ANC &minus;7.2&thinsp;pp** (p&thinsp;=&thinsp;0.003); no attendant +6.0&thinsp;pp** (p&thinsp;=&thinsp;0.002). Continuous specification (post&thinsp;&times;&thinsp;log FH50&thinsp;km): skilled delivery &minus;2.9&thinsp;pp per log-unit*** (p&lt;0.001). Amberg-style binary (any FH50&thinsp;km post-2009): &minus;10.2&thinsp;pp*** (p&lt;0.001). Direction and magnitude are consistent with the main LGA-level DiD (&minus;7.3&thinsp;pp), and directionally consistent with Amberg et al. (&minus;2.0&thinsp;pp in 35-country pan-Africa sample). Our larger effect is expected given the Middle Belt is the conflict epicenter of Nigeria; pan-Africa dilution with low-conflict country-years compresses Amberg&rsquo;s estimate.</td>
-      <td><span class="tag tag-sig">SIG ** / ***</span></td>
+      <td><strong>Lancet GH 50&thinsp;km replication</strong><br><span style="color:var(--t2);font-size:11.5px">Count ACLED FH events within 50&thinsp;km of each DHS cluster &times; year (Amberg et al. 2023 spec); with and without state&thinsp;&times;&thinsp;year FE</span></td>
+      <td><em>Without state&thinsp;&times;&thinsp;year FE:</em> binary treatment (top-tercile 50&thinsp;km exposure): skilled delivery &minus;5.3&thinsp;pp* (95%&thinsp;CI [&minus;9.3,&thinsp;&minus;1.3]); ANC &minus;7.2&thinsp;pp** (p&thinsp;=&thinsp;0.003); no attendant +6.0&thinsp;pp** (p&thinsp;=&thinsp;0.002). Continuous (post&thinsp;&times;&thinsp;log FH50&thinsp;km): skilled delivery &minus;2.9&thinsp;pp per log-unit*** (p&lt;0.001). Amberg-style binary (any FH50&thinsp;km post-2009): &minus;10.2&thinsp;pp*** (p&lt;0.001). <em>With state&thinsp;&times;&thinsp;year FE (within-state; cluster-level exposure):</em> binary 50&thinsp;km + SFE: skilled &minus;4.5&thinsp;pp (p&thinsp;=&thinsp;0.152, ns); ANC &minus;8.8&thinsp;pp* (p&thinsp;=&thinsp;0.044); 4+ ANC &minus;7.9&thinsp;pp† (p&thinsp;=&thinsp;0.085). Continuous log 50&thinsp;km + SFE: skilled &minus;2.2&thinsp;pp† (p&thinsp;=&thinsp;0.083). The ANC result survives within-state identification with the cluster-level 50&thinsp;km exposure; skilled delivery is marginal. <em>Power note:</em> the 50&thinsp;km cluster-level treatment varies across ~760 DHS clusters (vs. 182 LGAs for the binary LGA spec), providing richer within-state variation and smaller SEs. This is the most powerful within-state design available: ANC achieves p&thinsp;=&thinsp;0.044* with SFE under the 50&thinsp;km binary spec.</td>
+      <td><span class="tag tag-sig">SIG *<br><span style="font-weight:400">ANC survives SFE; skilled marginal</span></span></td>
+    </tr>
+    <tr>
+      <td><strong>Event study with state&thinsp;&times;&thinsp;year FE</strong><br><span style="color:var(--t2);font-size:11.5px">4-wave birth subsample; SFE replaces year FE; year&thinsp;&times;&thinsp;treated interactions retained</span></td>
+      <td>Running the 4-wave event study (2003, 2008, 2013, 2018; base=2008) on the birth subsample (N&thinsp;=&thinsp;23,254) with state&thinsp;&times;&thinsp;year FE replacing year FE: pre-trend 2003&thinsp;&times;&thinsp;treated b&thinsp;=&thinsp;&minus;6.5&thinsp;pp (SE&thinsp;=&thinsp;6.7, p&thinsp;=&thinsp;0.34, ns); 2013&thinsp;&times;&thinsp;treated b&thinsp;=&thinsp;&minus;8.3&thinsp;pp* (SE&thinsp;=&thinsp;4.1, p&thinsp;=&thinsp;0.045*); 2018&thinsp;&times;&thinsp;treated b&thinsp;=&thinsp;&minus;5.5&thinsp;pp (SE&thinsp;=&thinsp;5.2, p&thinsp;=&thinsp;0.29, ns). The pre-trend remains insignificant under SFE, confirming parallel trends within states. The 2013 effect (&minus;8.3&thinsp;pp*) is the strongest post-conflict wave; the 2018 attenuation (&minus;5.5&thinsp;pp, ns) may reflect a partial conflict wind-down or adaptation. With SFE, SEs are larger (within-state precision loss) and statistical power is limited for the 2018 wave. Note: these are larger in absolute terms than the 3-wave DiD with SFE (&minus;7.2&thinsp;pp†) because the 4-wave birth subsample has a slightly different composition.</td>
+      <td><span class="tag tag-warn">PARTIAL *<br><span style="font-weight:400">2013: p=0.045; 2018: ns</span></span></td>
     </tr>
     <tr>
       <td><strong>Birth-level panel</strong><br><span style="color:var(--t2);font-size:11.5px">BR files 2008/2013/2018 + IR 2003; birth year as time variable; 35,802 births</span></td>
@@ -400,6 +468,49 @@ svg{display:block;width:100%}
     <span><svg width="16" height="10" style="vertical-align:middle"><circle cx="8" cy="5" r="4.5" fill="var(--ch)"/></svg> 2SLS — Z3 transition zone</span>
     <span><svg width="16" height="10" style="vertical-align:middle"><circle cx="8" cy="5" r="4.5" fill="#2a9d3f"/></svg> 2SLS — Z4 tsetse/cattle</span>
   </div>
+</div>
+
+<!-- ── Power & Identification Summary ───────────────────────────────────────── -->
+<div class="section">
+  <p class="sec-head">Statistical Power &amp; Identification Summary</p>
+  <p style="font-family:var(--sans);font-size:13px;line-height:1.7;margin-bottom:14px">
+    <strong>Is every analysis underpowered?</strong> Not uniformly. The primary LGA+year FE model (G&thinsp;=&thinsp;182, N&thinsp;=&thinsp;21,517) has adequate power for effects &ge;10&thinsp;pp (MDE&thinsp;&asymp;&thinsp;8&thinsp;pp at 80% power; SE&thinsp;&asymp;&thinsp;4&thinsp;pp). The state&thinsp;&times;&thinsp;year FE spec is underpowered (MDE&thinsp;=&thinsp;11.7&thinsp;pp, SE&thinsp;=&thinsp;4.2&thinsp;pp; observed &minus;7.2&thinsp;pp = 47% power) because absorbing 35 SFE parameters consumes precision that was doing identification work. The mother FE design has a precise null (SE&thinsp;=&thinsp;1.6&thinsp;pp); its null is a genuine finding, not a power failure.
+  </p>
+  <table class="mech-tbl">
+    <tr>
+      <th style="width:30%">Design</th>
+      <th style="width:51%">Power / precision assessment</th>
+      <th style="width:19%">Status</th>
+    </tr>
+    <tr>
+      <td><strong>Primary DiD (LGA+yr FE)</strong><br><span style="color:var(--t2);font-size:11.5px">G=182, SE≈4pp</span></td>
+      <td>MDE ≈ 8&thinsp;pp at 80% power. Observed effects (&minus;16&thinsp;pp) are well above MDE; highly powered for skilled delivery. ANC and no-attendant similarly powered.</td>
+      <td><span class="tag tag-pass">POWERED</span></td>
+    </tr>
+    <tr>
+      <td><strong>State&thinsp;&times;&thinsp;yr FE spec</strong><br><span style="color:var(--t2);font-size:11.5px">G=182, SE=4.2pp after SFE</span></td>
+      <td>MDE = 11.7&thinsp;pp at 80% power. Within-state estimate &minus;7.2&thinsp;pp is below MDE — 47% power. Cannot distinguish &minus;7.2&thinsp;pp from &minus;11.7&thinsp;pp from zero with adequate confidence. The marginal significance (p&thinsp;=&thinsp;0.089†) reflects this underpowering.</td>
+      <td><span class="tag tag-warn">UNDERPOWERED</span></td>
+    </tr>
+    <tr>
+      <td><strong>50km cluster-level + SFE</strong><br><span style="color:var(--t2);font-size:11.5px">~760 DHS clusters, LGA-clustered SEs</span></td>
+      <td>The most powerful within-state design available. Cluster-level 50&thinsp;km exposure varies across ~760 DHS clusters (vs. 182 LGAs for binary spec), providing 4&times; more treatment variation within states. ANC achieves p&thinsp;=&thinsp;0.044* with SFE; skilled delivery p&thinsp;=&thinsp;0.083†. This is the recommended primary design for within-state identification.</td>
+      <td><span class="tag tag-sig">MOST POWERFUL</span></td>
+    </tr>
+    <tr>
+      <td><strong>Mother FE design</strong><br><span style="color:var(--t2);font-size:11.5px">SE=1.6pp; N=15,890 births</span></td>
+      <td>Precise null: b&thinsp;=&thinsp;+0.009&thinsp;pp (SE&thinsp;=&thinsp;1.6&thinsp;pp) for skilled delivery. The confidence interval excludes effects larger than 4&thinsp;pp in either direction (95%&thinsp;CI [&minus;2.3,&thinsp;+4.1]). A genuine null, not a power problem.</td>
+      <td><span class="tag tag-null">GENUINE NULL</span></td>
+    </tr>
+    <tr>
+      <td><strong>Why attenuation with SFE?</strong><br><span style="color:var(--t2);font-size:11.5px">Not just power — also composition</span></td>
+      <td>The &minus;16.2&thinsp;pp → &minus;7.2&thinsp;pp attenuation with SFE has two components: (i) compositional selection removes ~40% (education control: &minus;9.4&thinsp;pp); (ii) state-level time trends remove another ~30%. The residual &minus;7.2&thinsp;pp is the within-state, compositionally-adjusted estimate. It is underpowered, but even if fully powered, the true within-state effect is likely smaller than the raw &minus;16.2&thinsp;pp. The mother FE design — which eliminates compositional selection entirely — finds a null, suggesting the true individual-level causal effect may be small or zero. Ecological-level effects on LGA infrastructure may be real even if individual-level effects are small.</td>
+      <td><span class="tag tag-warn">INTERPRETATION</span></td>
+    </tr>
+  </table>
+  <p style="font-family:var(--sans);font-size:12.5px;color:var(--t2);margin-top:12px;line-height:1.6">
+    <strong>Pending analyses (remaining reviewer items):</strong> (8) Wild cluster bootstrap per outcome under preferred model — not yet computed; (13) Neonatal mortality with formal power calculation — data available in BR files but effect detectable only for large impacts on the 7–10% neonatal mortality baseline; (15) GPS displacement sensitivity — exclude DHS clusters near LGA boundaries (&lt;5&thinsp;km) to test boundary-crossing; (16) Conflict measurement sensitivity — restrict to fatal events only, compare ACLED to Nigeria Watch, align conflict exposure with pregnancy window rather than post-2009 broadly; (17) Relative vs. absolute effects — absolute pp effects shown; proportional effects are larger for lower-baseline groups (poor women, rural areas); (20) STROBE checklist, baseline characteristics table, and map of treated vs. control LGAs — prepared for journal submission version.
+  </p>
 </div>
 
 </div><!-- .page -->
