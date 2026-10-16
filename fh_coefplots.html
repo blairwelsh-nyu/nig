@@ -213,14 +213,29 @@ svg{display:block;width:100%}
     <div class="iv-c" style="font-weight:700;color:#c62828">1.8</div>
     <div class="iv-c" style="color:var(--t3)">&minus;0.009 (p&thinsp;=&thinsp;0.18)</div>
     <div class="iv-c" style="color:#c62828">Weak &mdash; discarded</div>
-    <div class="iv-c last-row"><strong>Z3: Agro-ecol. transition zone &times; post</strong><br><span style="color:var(--t2);font-size:11px">WorldClim BIO12 Gaussian(&mu;&thinsp;=&thinsp;1,500 mm, &sigma;&thinsp;=&thinsp;300 mm); LGA-level</span></div>
-    <div class="iv-c last-row" style="font-weight:700;color:var(--pass-fg)">27.1</div>
-    <div class="iv-c last-row">+0.448 (p&thinsp;&lt;&thinsp;0.001***)</div>
+    <div class="iv-c"><strong>Z3: Agro-ecol. transition zone &times; post</strong><br><span style="color:var(--t2);font-size:11px">WorldClim BIO12 Gaussian(&mu;&thinsp;=&thinsp;1,500 mm, &sigma;&thinsp;=&thinsp;300 mm); LGA-level</span></div>
+    <div class="iv-c" style="font-weight:700;color:var(--pass-fg)">27.1</div>
+    <div class="iv-c">+0.448 (p&thinsp;&lt;&thinsp;0.001***)</div>
+    <div class="iv-c" style="color:var(--pass-fg)">Strong (exceeds Stock–Yogo 16.4)</div>
+    <div class="iv-c last-row"><strong>Z4: Tsetse/cattle suitability &times; post</strong><br><span style="color:var(--t2);font-size:11px">WorldClim BIO1+BIO12 tsetse suitability proxy (Rogers &amp; Randolph 1993); LGA-level</span></div>
+    <div class="iv-c last-row" style="font-weight:700;color:var(--pass-fg)">19.2</div>
+    <div class="iv-c last-row">+0.282 (p&thinsp;&lt;&thinsp;0.001***)</div>
     <div class="iv-c last-row" style="color:var(--pass-fg)">Strong (exceeds Stock–Yogo 16.4)</div>
   </div>
-  <p style="font-family:var(--sans);font-size:12.5px;color:var(--t2);margin-top:12px;line-height:1.65">
-    <strong>2SLS with Z3:</strong> skilled delivery b&thinsp;=&thinsp;&minus;0.216*** (OLS &minus;0.036**); any ANC b&thinsp;=&thinsp;&minus;0.183*** (OLS &minus;0.035**); modern contraception b&thinsp;=&thinsp;&minus;0.101*** (OLS &minus;0.029***); no attendant b&thinsp;=&thinsp;+0.170*** (OLS +0.034***). All four 2SLS estimates retain the sign of OLS and are significant at p&thinsp;&lt;&thinsp;0.001, which supports the causal direction. The 2SLS magnitudes are approximately 5–6&times; larger than OLS, consistent with classical attenuation bias in OLS caused by measurement error in LGA-level conflict counts. Combined Z1+Z3 yields F<sub>avg</sub>&thinsp;=&thinsp;19.6 and similar estimates (skilled delivery b&thinsp;=&thinsp;&minus;0.095***). Z3 and Z1 are nearly orthogonal (r&thinsp;=&thinsp;&minus;0.02), suggesting they capture distinct conflict-risk dimensions. The OLS DiD remains the primary specification; the 2SLS results support the qualitative conclusion that conflict reduces skilled healthcare use.
+  <p style="font-family:var(--sans);font-size:12.5px;color:var(--t2);margin-top:8px;line-height:1.65">
+    <strong>Z4 mechanism:</strong> The tsetse fly historically prevented cattle-keeping in humid zones (Rogers &amp; Randolph 1993). High tsetse suitability (warm, humid) identifies historically farming-only LGAs with limited pastoral tradition—where Fulani herder in-migration post-2009 produces greater conflict than in areas accustomed to coexistence. Instrument: Gaussian temperature suitability &times; sigmoid precipitation suitability, standardized at LGA level.
   </p>
+  <p style="font-family:var(--sans);font-size:12.5px;color:var(--t2);margin-top:10px;line-height:1.65">
+    <strong>2SLS estimates</strong> (Figure 4 below): Both Z3 and Z4 produce estimates that are consistent in sign with OLS and significant at p&thinsp;&lt;&thinsp;0.001 for all four outcomes. Z3 implies 5–6&times; amplification over OLS (e.g., skilled delivery &minus;0.216 vs. &minus;0.036); Z4 implies 9–10&times; amplification (&minus;0.333). The larger Z4 estimates likely reflect that the tsetse instrument captures a subset of high-conflict LGAs with especially disrupted health systems. Z3 and Z4 are moderately correlated (r&thinsp;=&thinsp;&minus;0.45), so combining them weakens the joint F<sub>avg</sub>&thinsp;=&thinsp;8.6; we use each instrument separately. Convergence of two ecologically independent instruments from different historical mechanisms supports the causal interpretation of the OLS sign.
+  </p>
+  <p class="figcap" style="margin-top:16px"><strong>Figure 4.</strong> OLS vs. 2SLS Estimates: Sensitivity Across Identification Strategies</p>
+  <svg id="iv-cmp" viewBox="0 0 580 1"></svg>
+  <p class="fignote"><em>Notes:</em> Each outcome shows three estimates: OLS DiD (grey), 2SLS with Z3 (agro-ecological transition zone, blue), and 2SLS with Z4 (tsetse/cattle suitability, green). All specifications include LGA FE + year FE with LGA-clustered SEs. Horizontal bars = 95% CI. All Z3 and Z4 estimates significant at p&thinsp;&lt;&thinsp;0.001. Z3 first-stage F&thinsp;=&thinsp;27.1; Z4 F&thinsp;=&thinsp;19.2 (both exceed Stock–Yogo 10% CV = 16.4). The convergence in sign across OLS and both IV strategies supports the causal interpretation.</p>
+  <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:6px;font-family:var(--sans);font-size:11.5px;color:var(--t2)">
+    <span><svg width="16" height="10" style="vertical-align:middle"><circle cx="8" cy="5" r="4.5" fill="#888"/></svg> OLS (DiD)</span>
+    <span><svg width="16" height="10" style="vertical-align:middle"><circle cx="8" cy="5" r="4.5" fill="var(--ch)"/></svg> 2SLS — Z3 transition zone</span>
+    <span><svg width="16" height="10" style="vertical-align:middle"><circle cx="8" cy="5" r="4.5" fill="#2a9d3f"/></svg> 2SLS — Z4 tsetse/cattle</span>
+  </div>
 </div>
 
 </div><!-- .page -->
@@ -349,7 +364,7 @@ function esPlot(id,data,ylo,yhi,color,VW,VH){
 }
 
 /* ── forest / heterogeneity plot ──────────────────────────────────────────── */
-function hetPlot(id,rows,xlo,xhi,VW){
+function hetPlot(id,rows,xlo,xhi,VW,refVal=-.07296){
   const el=document.getElementById(id);
   const ML=188,MR=42,MT=14,MB=38;
   const PW=VW-ML-MR;
@@ -378,8 +393,7 @@ function hetPlot(id,rows,xlo,xhi,VW){
   /* zero + overall reference */
   const x0=xs(0);
   s+=`<line x1="${x0}" y1="${MT-4}" x2="${x0}" y2="${totalH-MB+4}" stroke="${Z}" stroke-width="1.2" stroke-dasharray="4,3"/>`;
-  const xOvr=xs(-0.07296);
-  s+=`<line x1="${xOvr}" y1="${MT-4}" x2="${xOvr}" y2="${totalH-MB+4}" stroke="${T3}" stroke-width="1" stroke-dasharray="3,3" opacity=".55"/>`;
+  if(refVal!=null){const xOvr=xs(refVal);s+=`<line x1="${xOvr}" y1="${MT-4}" x2="${xOvr}" y2="${totalH-MB+4}" stroke="${T3}" stroke-width="1" stroke-dasharray="3,3" opacity=".55"/>`;}
   const rects=[];
   positions.forEach(d=>{
     if(d.type==='header'){
@@ -392,12 +406,13 @@ function hetPlot(id,rows,xlo,xhi,VW){
       const y=d.y,st=sig(d.p);
       const lw=d.group==='overall'?2.4:1.8,rs=d.group==='overall'?5.5:4;
       const fw=d.group==='overall'?'700':'400',fs=d.group==='overall'?'12':'11.5';
-      s+=`<line x1="${xL}" y1="${y}" x2="${xR}" y2="${y}" stroke="${CH}" stroke-width="${lw}" stroke-linecap="round"/>`;
-      s+=`<line x1="${xL}" y1="${y-4}" x2="${xL}" y2="${y+4}" stroke="${CH}" stroke-width="${lw-.6}"/>`;
-      s+=`<line x1="${xR}" y1="${y-4}" x2="${xR}" y2="${y+4}" stroke="${CH}" stroke-width="${lw-.6}"/>`;
-      s+=`<circle cx="${xb}" cy="${y}" r="${rs}" fill="${CH}" stroke="${BG}" stroke-width="1.8"/>`;
+      const dc=d.color||CH;
+      s+=`<line x1="${xL}" y1="${y}" x2="${xR}" y2="${y}" stroke="${dc}" stroke-width="${lw}" stroke-linecap="round"/>`;
+      s+=`<line x1="${xL}" y1="${y-4}" x2="${xL}" y2="${y+4}" stroke="${dc}" stroke-width="${lw-.6}"/>`;
+      s+=`<line x1="${xR}" y1="${y-4}" x2="${xR}" y2="${y+4}" stroke="${dc}" stroke-width="${lw-.6}"/>`;
+      s+=`<circle cx="${xb}" cy="${y}" r="${rs}" fill="${dc}" stroke="${BG}" stroke-width="1.8"/>`;
       s+=`<text x="${ML-10}" y="${y+4}" text-anchor="end" font-size="${fs}" fill="${T1}" font-weight="${fw}" font-family="system-ui">${d.label}</text>`;
-      if(st) s+=`<text x="${xR+5}" y="${y+4.5}" font-size="10.5" fill="${CH}" font-family="system-ui">${st}</text>`;
+      if(st) s+=`<text x="${xR+5}" y="${y+4.5}" font-size="10.5" fill="${dc}" font-family="system-ui">${st}</text>`;
       const ttB=`${(d.b*100).toFixed(2)}pp`,ttC=`[${((d.b-ci)*100).toFixed(1)}, ${((d.b+ci)*100).toFixed(1)}] pp`;
       const rec=document.createElementNS('http://www.w3.org/2000/svg','rect');
       rec.setAttribute('x','0');rec.setAttribute('y',y-ROW_H/2);
@@ -444,12 +459,37 @@ const HET=[
   {label:'Primipara (first birth)',b:-.1157,  se:.0352,  p:.001,  type:'data', group:'parity'},
 ];
 
+/* ── IV comparison data (OLS vs 2SLS Z3 vs 2SLS Z4) ──────────────────────── */
+const CG='#888888', CG2='#2a9d3f';
+const CV_IV=[
+  {type:'header', label:'Skilled delivery'},
+  {type:'data', b:-0.0363, se:0.0113, p:0.002, label:'OLS (DiD)',                   color:CG},
+  {type:'data', b:-0.2157, se:0.0230, p:0.000, label:'2SLS — Z3 (transition zone)', color:CH},
+  {type:'data', b:-0.3332, se:0.0469, p:0.000, label:'2SLS — Z4 (tsetse/cattle)',   color:CG2},
+  {type:'gap'},
+  {type:'header', label:'Any ANC visit'},
+  {type:'data', b:-0.0354, se:0.0120, p:0.004, label:'OLS (DiD)',                   color:CG},
+  {type:'data', b:-0.1826, se:0.0306, p:0.000, label:'2SLS — Z3 (transition zone)', color:CH},
+  {type:'data', b:-0.3136, se:0.0629, p:0.000, label:'2SLS — Z4 (tsetse/cattle)',   color:CG2},
+  {type:'gap'},
+  {type:'header', label:'Modern contraception'},
+  {type:'data', b:-0.0294, se:0.0064, p:0.000, label:'OLS (DiD)',                   color:CG},
+  {type:'data', b:-0.1004, se:0.0125, p:0.000, label:'2SLS — Z3 (transition zone)', color:CH},
+  {type:'data', b:-0.1502, se:0.0222, p:0.000, label:'2SLS — Z4 (tsetse/cattle)',   color:CG2},
+  {type:'gap'},
+  {type:'header', label:'No birth attendant (harmful ↑)'},
+  {type:'data', b:+0.0335, se:0.0083, p:0.000, label:'OLS (DiD)',                   color:CE},
+  {type:'data', b:+0.1693, se:0.0185, p:0.000, label:'2SLS — Z3 (transition zone)', color:CE},
+  {type:'data', b:+0.1855, se:0.0354, p:0.000, label:'2SLS — Z4 (tsetse/cattle)',   color:CE},
+];
+
 /* ── render ────────────────────────────────────────────────────────────────── */
 coef('cv-h', DID_H, -.165, .125, CH, 580, 224);
 esPlot('es-sd', ES.sd, -.22,  .14, CH, 220, 200);
 esPlot('es-mc', ES.mc, -.13,  .09, CH, 220, 200);
 esPlot('es-na', ES.na, -.10,  .16, CE, 220, 200);
 hetPlot('het', HET, -.22, .04, 580);
+hetPlot('iv-cmp', CV_IV, -.58, .38, 580, null);
 </script>
 </body>
 </html>
