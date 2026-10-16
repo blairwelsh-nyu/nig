@@ -100,7 +100,7 @@ svg{display:block;width:100%}
 
 <div class="abs">
   <p class="abs-head">Abstract</p>
-  <p>We estimate the causal effect of farmer–herder conflict on women's healthcare utilization in Nigeria's Middle Belt. Using a four-wave difference-in-differences design (2003, 2008, 2013, 2018) that exploits variation in post-2009 ACLED conflict intensity across Local Government Areas, we find that women in high-conflict LGAs experienced significant declines in skilled birth attendance (&minus;7.3 percentage points), prenatal care visits (&minus;5.6&thinsp;pp), and modern contraceptive use (&minus;5.3&thinsp;pp), alongside a 5.3&thinsp;pp increase in unattended births. A four-wave event study using the 2003 DHS as a pre-treatment wave finds no evidence against parallel pre-trends for any outcome. Positive mechanism tests point to supply-side disruption: conflict increases women's self-reported financial access barriers (+8.3&thinsp;pp, p&thinsp;=&thinsp;0.002); both public and private facility births decline; wealthier women bear larger skilled-delivery reductions; and a dose-response gradient is significant across all outcomes. The effects are similar for Fulani and non-Fulani women within the same LGA, consistent with facility-level disruption rather than targeted exclusion. The results are robust to leave-one-state-out jackknifes, Conley spatial standard errors, BH violence controls, and alternative treatment definitions, and survive a randomization inference test at p&thinsp;=&thinsp;0.078.</p>
+  <p>We estimate the causal effect of farmer–herder conflict on women's healthcare utilization in Nigeria's Middle Belt. Using a four-wave difference-in-differences design (2003, 2008, 2013, 2018) that exploits variation in post-2009 ACLED conflict intensity across Local Government Areas, we find that women in high-conflict LGAs experienced significant declines in skilled birth attendance (&minus;7.3 percentage points), prenatal care visits (&minus;5.6&thinsp;pp), and modern contraceptive use (&minus;5.3&thinsp;pp), alongside a 5.3&thinsp;pp increase in unattended births. A four-wave event study using the 2003 DHS as a pre-treatment wave finds no evidence against parallel pre-trends for any outcome. Positive mechanism tests point to supply-side disruption: conflict increases women's self-reported financial access barriers (+8.3&thinsp;pp, p&thinsp;=&thinsp;0.002); both public and private facility births decline; wealthier women bear larger skilled-delivery reductions; and a dose-response gradient is significant across all outcomes. The Fulani–non-Fulani interaction is not significant for any outcome (p&thinsp;&gt;&thinsp;0.6), consistent with facility-level disruption rather than targeted exclusion, though within-group estimates are imprecise. The results are robust to leave-one-state-out jackknifes, Conley spatial standard errors, BH violence controls, and alternative treatment definitions, and survive a randomization inference test at p&thinsp;=&thinsp;0.078.</p>
 </div>
 
 <!-- ── Figure 1 ─────────────────────────────────────────────────────────────── -->
@@ -237,6 +237,31 @@ svg{display:block;width:100%}
       <td><strong>Conley spatial standard errors</strong><br><span style="color:var(--t2);font-size:11.5px">Bartlett-kernel HAC, 20 / 50 / 100&thinsp;km cutoffs</span></td>
       <td>Conley SEs are similar to or smaller than LGA-cluster SEs across all three bandwidth choices. Spatial autocorrelation in residuals is not inflating inference; the cluster-robust SEs are the conservative benchmark.</td>
       <td><span class="tag tag-pass">PASS</span></td>
+    </tr>
+  </table>
+</div>
+
+<!-- ── Ethnicity & Religion Tests ───────────────────────────────────────────── -->
+<div class="section">
+  <p class="sec-head">Ethnicity &amp; Religion Tests</p>
+  <p style="font-family:var(--sans);font-size:13px;line-height:1.65;margin-bottom:10px">
+    The farmer–herder conflict pits predominantly Muslim Fulani pastoralists against predominantly Christian farming communities (Tiv, Berom, Tarok). If conflict causes targeted disruption or exclusion of one group, we should see differential treatment effects. Wave-specific ethnicity codes are used throughout (2008: Fulani=v131 code&thinsp;2; 2013: code&thinsp;109; 2018: code&thinsp;2). N&thinsp;=&thinsp;5,169 Fulani women (14.3% of the Middle Belt sample).
+  </p>
+  <table class="mech-tbl">
+    <tr>
+      <th style="width:30%">Test</th>
+      <th style="width:51%">Finding</th>
+      <th style="width:19%">Verdict</th>
+    </tr>
+    <tr>
+      <td><strong>Ethnicity triple-DiD</strong><br><span style="color:var(--t2);font-size:11.5px">post&thinsp;&times;&thinsp;treated&thinsp;&times;&thinsp;is_Fulani</span></td>
+      <td>Non-Fulani base effect: skilled delivery &minus;6.6&thinsp;pp* (p&thinsp;=&thinsp;0.011), no-attendant +4.1&thinsp;pp* (p&thinsp;=&thinsp;0.014). Fulani differential (interaction): +2.4&thinsp;pp for skilled delivery (p&thinsp;=&thinsp;0.63), +1.0&thinsp;pp for no-attendant (p&thinsp;=&thinsp;0.86). The interaction is far from significant for all outcomes; point estimates suggest similar or slightly smaller Fulani effects. <em>Caution:</em> Fulani individual estimates are imprecise (SE&thinsp;&asymp;&thinsp;0.05–0.07); this is no-evidence-of-difference, not equivalence.</td>
+      <td><span class="tag tag-null">NULL (ns)</span></td>
+    </tr>
+    <tr>
+      <td><strong>Religion triple-DiD</strong><br><span style="color:var(--t2);font-size:11.5px">post&thinsp;&times;&thinsp;treated&thinsp;&times;&thinsp;is_Christian</span></td>
+      <td>Muslim base effect: skilled delivery &minus;2.5&thinsp;pp (p&thinsp;=&thinsp;0.44, ns), ANC +1.2&thinsp;pp (p&thinsp;=&thinsp;0.75, ns). Christian differential: ANC &minus;8.6&thinsp;pp (p&thinsp;=&thinsp;0.09†), skilled delivery &minus;6.4&thinsp;pp (p&thinsp;=&thinsp;0.18, ns). The marginal ANC difference is consistent with farming communities (predominantly Christian Tiv, Berom, Tarok) bearing more direct conflict exposure, as these groups are the primary land-use counterparty. Results are underpowered within religious subgroups.</td>
+      <td><span class="tag tag-warn">MARGINAL †</span></td>
     </tr>
   </table>
 </div>

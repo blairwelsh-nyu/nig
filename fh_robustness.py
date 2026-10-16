@@ -308,17 +308,22 @@ try:
         for k,v in sorted(vl18.items())[:30]: print(f"    {k}: {v}")
 except: pass
 
-# Identify Fulani (code 4 in most Nigeria DHS; verify from metadata)
-# Also identify farming communities: Tiv (11), Berom (15), Igbo (3)
-fulani_codes   = [4]   # will refine after seeing labels
-farming_codes  = [3, 11, 15, 16, 17]  # Igbo, Tiv, Berom, Tarok, Jukun
-print(f"\n  Checking groups in Middle Belt sample:")
-for code, name in [(4,'Fulani'),(3,'Igbo'),(11,'Tiv'),(15,'Berom'),(16,'Tarok')]:
-    n = (ir['v131']==code).sum()
-    print(f"    {name} (v131={code}): N={n}")
-
-ir['is_fulani']  = ir['v131'].isin(fulani_codes).astype(float)
-ir['is_farming'] = ir['v131'].isin(farming_codes).astype(float)
+# Wave-specific ethnicity codes (verified from DHS metadata):
+# 2008: Fulani=2, Tiv=9, Igbo=6
+# 2013: Fulani=109, Tiv=276, Igbo=138, Berom=53, Tarok=272, Jukun=164
+# 2018: Fulani=2, Tiv=9, Igbo=6
+ir['is_fulani'] = (
+    ((ir['survey_yr'] == 2008) & (ir['v131'] == 2)) |
+    ((ir['survey_yr'] == 2013) & (ir['v131'] == 109)) |
+    ((ir['survey_yr'] == 2018) & (ir['v131'] == 2))
+).astype(float)
+ir['is_farming'] = (
+    ((ir['survey_yr'] == 2008) & (ir['v131'].isin([9, 6]))) |
+    ((ir['survey_yr'] == 2013) & (ir['v131'].isin([276, 138, 53, 272, 164]))) |
+    ((ir['survey_yr'] == 2018) & (ir['v131'].isin([9, 6])))
+).astype(float)
+print(f"\n  Fulani: N={(ir['is_fulani']==1).sum():,} ({100*(ir['is_fulani']==1).mean():.1f}%)")
+print(f"  Farming (Tiv/Igbo/Berom/Tarok/Jukun): N={(ir['is_farming']==1).sum():,}")
 ir['is_muslim']  = (ir['v130'] == 2).astype(float)  # 2=Islam in DHS
 
 print(f"\n  Fulani women in MB sample: N={(ir['is_fulani']==1).sum()}")
