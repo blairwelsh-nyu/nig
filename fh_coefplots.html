@@ -100,7 +100,7 @@ svg{display:block;width:100%}
 
 <div class="abs">
   <p class="abs-head">Abstract</p>
-  <p>We estimate the causal effect of farmer–herder conflict on women's healthcare utilization in Nigeria's Middle Belt. Using a four-wave difference-in-differences design (2003, 2008, 2013, 2018) that exploits variation in post-2009 ACLED conflict intensity across Local Government Areas, we find that women in high-conflict LGAs experienced significant declines in skilled birth attendance (&minus;7.3 percentage points), prenatal care visits (&minus;5.6&thinsp;pp), and modern contraceptive use (&minus;5.3&thinsp;pp), alongside a 5.3&thinsp;pp increase in unattended births. A four-wave event study using the 2003 DHS as a pre-treatment wave finds no evidence against parallel pre-trends for any outcome. Positive mechanism tests point to supply-side disruption: conflict increases women's self-reported financial access barriers (+8.3&thinsp;pp, p&thinsp;=&thinsp;0.002); both public and private facility births decline; wealthier women bear larger skilled-delivery reductions; and a dose-response gradient is significant across all outcomes. The Fulani–non-Fulani interaction is not significant for any outcome (p&thinsp;&gt;&thinsp;0.6), consistent with facility-level disruption rather than targeted exclusion, though within-group estimates are imprecise. The results are robust to leave-one-state-out jackknifes, Conley spatial standard errors, BH violence controls, and alternative treatment definitions, and survive a randomization inference test at p&thinsp;=&thinsp;0.078.</p>
+  <p>We estimate the causal effect of farmer–herder conflict on women's healthcare utilization in Nigeria's Middle Belt. Using a four-wave difference-in-differences design (2003, 2008, 2013, 2018) that exploits variation in post-2009 ACLED conflict intensity across Local Government Areas, we find that women in high-conflict LGAs experienced significant declines in skilled birth attendance (&minus;7.3 percentage points), prenatal care visits (&minus;5.6&thinsp;pp), and modern contraceptive use (&minus;5.3&thinsp;pp), alongside a 5.3&thinsp;pp increase in unattended births. A four-wave event study using the 2003 DHS as a pre-treatment wave finds no evidence against parallel pre-trends for any outcome. Positive mechanism tests point to supply-side disruption: conflict increases financial access barriers (+8.3&thinsp;pp, p&thinsp;=&thinsp;0.002) while distance and social-norms barriers are unaffected; births shift from nurse/midwife (&minus;6.4&thinsp;pp**) toward TBA (+10.7&thinsp;pp**) and unattended home birth (+5.3&thinsp;pp**); DPT3 vaccination coverage declines marginally (&minus;11.4&thinsp;pp, p&thinsp;=&thinsp;0.063); wealthier women bear larger skilled-delivery reductions; and a dose-response gradient is significant across all outcomes. The Fulani–non-Fulani interaction is not significant for any outcome (p&thinsp;&gt;&thinsp;0.6), consistent with facility-level disruption rather than targeted exclusion, though within-group estimates are imprecise. The results are robust to leave-one-state-out jackknifes, Conley spatial standard errors, BH violence controls, and alternative treatment definitions, survive a randomization inference test at p&thinsp;=&thinsp;0.078, and persist in the subsample of always-resident women. Compositional selection on education (p&thinsp;=&thinsp;0.006) suggests the estimates are likely conservative lower bounds.</p>
 </div>
 
 <!-- ── Figure 1 ─────────────────────────────────────────────────────────────── -->
@@ -147,14 +147,24 @@ svg{display:block;width:100%}
       <th style="width:19%">Verdict</th>
     </tr>
     <tr>
-      <td><strong>Financial access barriers</strong><br><span style="color:var(--t2);font-size:11.5px">Post&thinsp;&times;&thinsp;treated &rarr; v467b (money = big problem)</span></td>
-      <td>Conflict increases women's self-reported financial barriers to care (+8.3&thinsp;pp, p&thinsp;=&thinsp;0.002**). A positive supply-side test: disruption raises costs of accessing facilities even for women who remain in the LGA.</td>
+      <td><strong>Financial access barriers</strong><br><span style="color:var(--t2);font-size:11.5px">Post&thinsp;&times;&thinsp;treated &rarr; v467b/c/d separately</span></td>
+      <td>Money barrier (+8.3&thinsp;pp, p&thinsp;=&thinsp;0.002**) is the only significant barrier. Distance to facility (+0.0&thinsp;pp, p&thinsp;=&thinsp;0.96) and not wanting to go alone (+8.0&thinsp;pp, p&thinsp;=&thinsp;0.14) are not significant. Conflict raises financial costs of access—consistent with road/market disruption—but distance or social norms are not differentially affected.</td>
       <td><span class="tag tag-sig">SIG **</span></td>
     </tr>
     <tr>
       <td><strong>Facility-type shift</strong><br><span style="color:var(--t2);font-size:11.5px">Public vs. private facility vs. home birth decomposition</span></td>
       <td>Public facility births decline (&minus;3.5&thinsp;pp, p&thinsp;=&thinsp;0.082†) and private facility births decline (&minus;2.7&thinsp;pp, p&thinsp;=&thinsp;0.031*); home births rise (+12.2&thinsp;pp, p&thinsp;=&thinsp;0.014*). Consistent with facility-level disruption across both sectors rather than demand suppression alone.</td>
       <td><span class="tag tag-sig">SIG *</span></td>
+    </tr>
+    <tr>
+      <td><strong>Birth attendant decomposition</strong><br><span style="color:var(--t2);font-size:11.5px">Doctor / nurse / auxiliary / TBA / no one</span></td>
+      <td>Conflict shifts births away from skilled providers toward traditional birth attendants and unattended home births. Doctor: &minus;1.8&thinsp;pp (p&thinsp;=&thinsp;0.089†); nurse/midwife: &minus;6.4&thinsp;pp** (p&thinsp;=&thinsp;0.006); auxiliary nurse/midwife: &minus;0.7&thinsp;pp (ns). In contrast: TBA +10.7&thinsp;pp** (p&thinsp;=&thinsp;0.002); no attendant +5.3&thinsp;pp** (p&thinsp;=&thinsp;0.003). Nurse/midwives bear the largest absolute loss. The TBA rebound substantially exceeds the skilled-provider decline, indicating mothers are substituting traditional for institutional care rather than avoiding birth assistance altogether.</td>
+      <td><span class="tag tag-sig">SIG **</span></td>
+    </tr>
+    <tr>
+      <td><strong>Child vaccination</strong><br><span style="color:var(--t2);font-size:11.5px">DPT3, measles coverage in children 12–35&thinsp;m (BR files)</span></td>
+      <td>DPT3 coverage: &minus;11.4&thinsp;pp (p&thinsp;=&thinsp;0.063†, N&thinsp;=&thinsp;12,122 children 12–35&thinsp;m). Measles coverage: &minus;2.8&thinsp;pp (p&thinsp;=&thinsp;0.64, ns). The DPT3 result is marginal and is consistent with disruption to the multi-contact immunisation schedule (3 doses require 3 clinic visits); measles, given in a single dose, is less disrupted. Small sample attenuates power.</td>
+      <td><span class="tag tag-warn">MARGINAL †</span></td>
     </tr>
     <tr>
       <td><strong>Spatial spillovers</strong><br><span style="color:var(--t2);font-size:11.5px">Neighbor-LGA conflict added to DiD</span></td>
@@ -192,8 +202,8 @@ svg{display:block;width:100%}
       <td><span class="tag tag-null">NULL (ns)</span></td>
     </tr>
     <tr>
-      <td><strong>Placebo treatment</strong><br><span style="color:var(--t2);font-size:11.5px">Pre-2009 conflict as treatment</span></td>
-      <td>Replacing treatment with top-tercile 2005–2008 FH conflict yields null estimates for all outcomes. Pre-existing conflict levels do not drive the results.</td>
+      <td><strong>Placebo treatment</strong><br><span style="color:var(--t2);font-size:11.5px">Top-tercile 2005–2008 FH conflict, 2003–2008 waves</span></td>
+      <td>Replacing treatment with top-tercile <em>pre-onset</em> conflict (2005–2008) in a 2003–2008-only panel yields null estimates for all outcomes: skilled delivery p&thinsp;=&thinsp;0.34, ANC p&thinsp;=&thinsp;0.20, no attendant p&thinsp;=&thinsp;0.79. LGAs that would experience conflict later were not already experiencing healthcare declines before 2009.</td>
       <td><span class="tag tag-pass">PASS</span></td>
     </tr>
     <tr>
@@ -236,6 +246,16 @@ svg{display:block;width:100%}
     <tr>
       <td><strong>Conley spatial standard errors</strong><br><span style="color:var(--t2);font-size:11.5px">Bartlett-kernel HAC, 20 / 50 / 100&thinsp;km cutoffs</span></td>
       <td>Conley SEs are similar to or smaller than LGA-cluster SEs across all three bandwidth choices. Spatial autocorrelation in residuals is not inflating inference; the cluster-robust SEs are the conservative benchmark.</td>
+      <td><span class="tag tag-pass">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>Compositional selection</strong><br><span style="color:var(--t2);font-size:11.5px">Does treatment &times; post predict predetermined characteristics?</span></td>
+      <td>Age (b&thinsp;=&thinsp;+0.36, p&thinsp;=&thinsp;0.13) and wealth quintile (b&thinsp;=&thinsp;&minus;0.32, p&thinsp;=&thinsp;0.13) are not significantly predicted by treatment &times; post. <em>Education is:</em> treated-wave women have 0.67 lower education units (p&thinsp;=&thinsp;0.006**), suggesting that conflict may change which women are surveyed (e.g. displacement of higher-educated women, or differential fertility by education). This compositional shift would bias the main estimates toward zero (lower-education women have lower baseline utilization), so the DiD estimates are likely conservative lower bounds. The wealth-heterogeneity test (richer women bear larger declines) is also directionally consistent with positive selection of higher users into the survey in treated areas.</td>
+      <td><span class="tag tag-warn">PARTIAL</span></td>
+    </tr>
+    <tr>
+      <td><strong>Non-movers restriction</strong><br><span style="color:var(--t2);font-size:11.5px">Restrict to women who have always lived in the LGA (v104=95)</span></td>
+      <td>Restricting to always-resident women (N&thinsp;=&thinsp;11,616, 32.1% of sample) preserves the main results: skilled delivery &minus;5.0&thinsp;pp* (p&thinsp;=&thinsp;0.045), modern contraception &minus;5.0&thinsp;pp*** (p&thinsp;=&thinsp;0.0004). ANC is directionally consistent but imprecise (&minus;5.1&thinsp;pp, p&thinsp;=&thinsp;0.14). Effects are not driven by conflict-induced migration sorting high-utilization women out of treated LGAs.</td>
       <td><span class="tag tag-pass">PASS</span></td>
     </tr>
   </table>
